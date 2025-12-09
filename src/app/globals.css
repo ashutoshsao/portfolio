@@ -8,6 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-floralwhite: #FFFAF0;
+  --color-dark-card: #1a1f2e;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
