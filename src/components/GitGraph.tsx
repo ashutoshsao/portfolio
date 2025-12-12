@@ -2,26 +2,11 @@
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 
-// Simple skeleton loader matching calendar dimensions
-function GitHubCalendarSkeleton() {
-    return (
-        <div
-            className="flex items-center justify-center"
-            style={{ minHeight: '150px', width: '828px' }}
-        >
-            <div className="flex flex-col items-center gap-3">
-                <div className="w-8 h-8 border-2 border-gray-300 dark:border-gray-700 border-t-gray-600 dark:border-t-gray-400 rounded-full animate-spin" />
-                <p className="text-sm text-gray-500 dark:text-gray-400">Loading contributions...</p>
-            </div>
-        </div>
-    )
-}
-
+// The GitHubCalendar component has built-in loading skeleton that matches exact dimensions
 const GitHubCalendar = dynamic(
     () => import('react-github-calendar').then((mod) => ({ default: mod.GitHubCalendar })),
     {
-        ssr: false,
-        loading: () => <GitHubCalendarSkeleton />
+        ssr: false
     }
 )
 
@@ -34,7 +19,7 @@ export default function GitGraph() {
     })
 
     return (
-        <div className="w-full flex flex-col items-center mt-8 mb-4 gap-4 max-sm:hidden">
+        <div className="w-full flex flex-col items-center mt-8 mb-4 gap-4">
             {/* Date */}
             <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
                 {currentDate}
@@ -45,19 +30,23 @@ export default function GitGraph() {
                 GitHub Contributions
             </h2>
 
-            {/* Calendar */}
-            <div className="relative flex justify-center" style={{ minHeight: '150px', width: '828px' }}>
-                <Link href={'https://github.com/ashutoshsao'} target="_blank" rel="noopener noreferrer" className="block">
-                    <GitHubCalendar
-                        username="ashutoshsao"
-                        blockSize={10}
-                        blockMargin={3}
-                        theme={{
-                            light: ["#1e1e2f", "#5a3e7a", "#7e5aa2", "#a87cc3", "#d9a9e6"],
-                            dark: ["#1e1e2f", "#5a3e7a", "#7e5aa2", "#a87cc3", "#d9a9e6"]
-                        }}
-                    />
-                </Link>
+            {/* Calendar Container - Scrollable on mobile, centered on desktop */}
+            <div className="w-full sm:flex sm:justify-center">
+                <div className="overflow-x-auto sm:overflow-x-visible -mx-4 sm:mx-0 px-4 sm:px-0">
+                    <div className="relative flex justify-center flex-shrink-0" style={{ minHeight: '150px', width: '828px' }}>
+                        <Link href={'https://github.com/ashutoshsao'} target="_blank" rel="noopener noreferrer" className="block">
+                            <GitHubCalendar
+                                username="ashutoshsao"
+                                blockSize={10}
+                                blockMargin={3}
+                                theme={{
+                                    light: ["#1e1e2f", "#5a3e7a", "#7e5aa2", "#a87cc3", "#d9a9e6"],
+                                    dark: ["#1e1e2f", "#5a3e7a", "#7e5aa2", "#a87cc3", "#d9a9e6"]
+                                }}
+                            />
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
     )
