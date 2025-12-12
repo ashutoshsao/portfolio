@@ -6,10 +6,10 @@ export default function ProjectsShowcase() {
     const projects = [
         {
             title: 'Brief',
-            description: 'A brief description of your Brief application. This is a showcase of your work and skills.',
+            description: 'An open-source article summarizer that turns lengthy articles into crisp, concise summaries using AI. Extract and summarize articles from URLs, save history in localStorage, and copy summaries with one click.',
             githubUrl: 'https://github.com/ashutoshsao/brief',
             demoUrl: 'https://brief.ashutoshsao.com',
-            techStack: ['React', 'TypeScript', 'Next.js'],
+            techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Query'],
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -18,16 +18,28 @@ export default function ProjectsShowcase() {
         },
         {
             title: 'Blog Site',
-            description: 'A blog site application showcasing your writing and development skills. Share your thoughts and ideas.',
+            description: 'A modern, full-stack blogging platform built with a monorepo architecture using Turborepo. Features a React frontend with Vite, serverless API on Cloudflare Workers with Hono, and end-to-end type safety with Prisma.',
             githubUrl: 'https://github.com/ashutoshsao/blog-site',
             demoUrl: 'https://blogsite.ashutoshsao.com/',
-            techStack: ['React', 'TypeScript', 'Next.js'],
+            techStack: ['React', 'TypeScript', 'Vite', 'Hono', 'Cloudflare Workers', 'Prisma', 'Turborepo'],
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                 </svg>
             )
-        }
+        },
+        // {
+        //     title: 'Second Brain',
+        //     description: 'A "Second Brain" application for organizing, storing, and connecting your thoughts, notes, and ideas. Features user authentication with JWT, content management, tagging, and public sharing capabilities.',
+        //     githubUrl: 'https://github.com/ashutoshsao/second-brain',
+        //     demoUrl: undefined,
+        //     techStack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+        //     icon: (
+        //         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        //             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        //         </svg>
+        //     )
+        // }
     ]
 
     return (
