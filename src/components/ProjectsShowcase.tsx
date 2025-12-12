@@ -8,7 +8,7 @@ export default function ProjectsShowcase() {
             title: 'Brief',
             description: 'A brief description of your Brief application. This is a showcase of your work and skills.',
             githubUrl: 'https://github.com/ashutoshsao/brief',
-            demoUrl: 'https://brief-mauve.vercel.app',
+            demoUrl: 'https://brief.ashutoshsao.com',
             techStack: ['React', 'TypeScript', 'Next.js'],
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
