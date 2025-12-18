@@ -18,6 +18,17 @@ export default function Home() {
       <div className="w-full flex justify-center mt-8">
         <GitGraph />
       </div>
+      <footer className="mt-16 mb-8 text-center text-gray-600 text-sm">
+          Made with ❤️ by{" "}
+          <a
+            href="https://x.com/ashutosh_sao"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-purple-400 hover:text-purple-500 transition-colors duration-300"
+          >
+            ashutosh sao
+          </a>
+        </footer>
     </div>
   )
 }
