@@ -1,0 +1,812 @@
+# Resume Information Repository
+# Last Updated: 2026-01-10
+# This file contains VERIFIED information from GitHub and actual contributions
+
+personal_info:
+  name: "Ashutosh Sao"
+  github: "https://github.com/ashutoshsao"
+  twitter: "https://x.com/ashutosh_sao"
+  website: "https://ashutoshsao.com"
+  email: "ashutoshsao17@gmail.com"
+  phone: "+91-8319686432"
+  location: "Bhilai, India"
+  linkedin: "https://www.linkedin.com/in/ashutoshsao/"
+
+summary:
+  # TODO: Customize this summary based on the job you're applying for
+  - "Computer Science student with strong focus on full-stack development and open-source contributions"
+  - "Contributed 22+ merged PRs to major open-source projects including Talawa (14 PRs) and stdlib-js (8 PRs)"
+  - "Built and deployed multiple production-ready applications using TypeScript, React, Go, and serverless architecture"
+
+skills:
+  programming_languages:
+    - "JavaScript/TypeScript"
+    - "Python"
+    - "Go"
+    - "C/C++"
+    - "SQL"
+    - "Shell/Bash"
+  
+  frontend:
+    - "React (Hooks, Context API, State Management)"
+    - "Next.js"
+    - "TanStack Query (React Query)"
+    - "Material-UI (MUI)"
+    - "Tailwind CSS"
+    - "HTML5/CSS3"
+    - "DOM Manipulation"
+  
+  backend:
+    - "Node.js (npm, nvm)"
+    - "Express (Middlewares, Routes, Error Handling)"
+    - "GraphQL"
+    - "REST APIs"
+    - "AWS Lambda (Serverless)"
+    - "Prisma ORM"
+    - "Mongoose (MongoDB ODM)"
+    - "NextAuth.js (OAuth: Google, GitHub + Email/Password + Cookies)"
+  
+  databases:
+    - "PostgreSQL (SQL queries, Joins, Transactions, Keys, Relationships)"
+    - "MongoDB (Mongoose, Relationships, Transactions)"
+    - "MySQL"
+    - "Database Connection Pooling"
+    - "ORM/ODM (Prisma, Mongoose)"
+  
+  tools_and_platforms:
+    - "Git/GitHub"
+    - "Docker & Docker Compose"
+    - "AWS (Lambda, EC2)"
+    - "CI/CD (GitHub Actions + AWS EC2 deployment scripts)"
+    - "Linux (Arch Linux, Ubuntu)"
+    - "UEFI/BIOS, Bootloaders (GRUB)"
+    - "Jest, React Testing Library"
+    - "Axios (HTTP client)"
+    - "Zod (Type validation)"
+  
+  other:
+    - "Test-Driven Development (TDD)"
+    - "Code Review"
+    - "Technical Documentation"
+    - "ESLint/Code Quality Tools"
+    - "Async/Await, Promises"
+    - "Data Structures & Algorithms"
+    - "Time & Space Complexity Analysis"
+
+# Detailed Technical Knowledge (from learning.md)
+technical_knowledge:
+  data_structures_algorithms:
+    fundamentals:
+      - "Arrays and Dynamic Arrays"
+      - "Time and Space Complexity Analysis"
+      - "Recursion"
+      - "Pair, Maps, and Sets"
+    
+    searching_sorting:
+      - "Linear Search, Binary Search"
+      - "Merge Sort, Quick Sort, Count Sort"
+    
+    languages_used:
+      - "C/C++ (compilers, versions, platforms)"
+      - "Understanding of data types, sizes, and overflow"
+  
+  mern_stack_expertise:
+    javascript_advanced:
+      - "Browser APIs: setInterval, setTimeout"
+      - "Promises and async/await syntax"
+      - "Modern import/export syntax"
+    
+    typescript_advanced:
+      - "Types and Type Safety"
+      - "Enums"
+      - "Interfaces"
+      - "Generics"
+      - "Utility Types: Pick, Partial, Readonly"
+    
+    react_ecosystem:
+      - "React Hooks (useState, useEffect, useContext, etc.)"
+      - "Prop Drilling and Context API"
+      - "State Management"
+      - "Component Lifecycle"
+    
+    backend_expertise:
+      - "Express.js: Middlewares, Global Catch, Routes and Router"
+      - "MongoDB: Mongoose, Relationships, Atomic Transactions"
+      - "PostgreSQL: Complex SQL queries, TIMESTAMP WITH TIME ZONE"
+      - "Database Constraints: ON DELETE CASCADE | RESTRICT"
+      - "Database Keys and Relationships"
+      - "Joins: Types and Usage"
+    
+    orm_odm:
+      - "Understanding of ORMs and their benefits"
+      - "Prisma ORM for PostgreSQL"
+      - "Mongoose ODM for MongoDB"
+      - "Database Connection Pooling"
+    
+    tools_libraries:
+      - "Axios for HTTP requests"
+      - "Zod for runtime type validation"
+      - "Tailwind CSS for styling"
+      - "Docker for containerization"
+
+# Open Source Contributions (VERIFIED)
+open_source_contributions:
+  - project: "Talawa Admin"
+    organization: "PalisadoesFoundation"
+    role: "Active Contributor"
+    repository: "https://github.com/PalisadoesFoundation/talawa-admin"
+    total_prs: "10 merged PRs (14 total across Talawa Admin + API)"
+    contributions:
+      - pr: "#6301"
+        title: "Replace MUI barrel imports with path-specific imports in LoginPage"
+        description: "Optimized import performance by eliminating barrel imports"
+        status: "Open"
+      
+      - pr: "#6223"
+        title: "Optimize imports and refactor ProfileForm components"
+        description: "Major refactor with 91 comments - comprehensive component restructuring"
+        status: "Merged"
+        impact: "Improved code maintainability and test coverage"
+      
+      - pr: "#6210"
+        title: "Refactor event visibility to radio buttons"
+        description: "Enhanced UX for event creation with improved visibility controls"
+        status: "Merged"
+        comments: 21
+      
+      - pr: "#6161"
+        title: "Implement restricted imports rule for DatePickers and migration"
+        description: "Major ESLint configuration and codebase-wide refactor"
+        status: "Merged"
+        comments: 157
+        impact: "Improved bundle size and build performance across entire codebase"
+      
+      - pr: "#6077"
+        title: "Replace MUI barrel imports with path imports in index.tsx"
+        description: "Performance optimization for main entry point"
+        status: "Merged"
+      
+      - pr: "#5966"
+        title: "Add unit tests for AddMember.tsx"
+        description: "Increased test coverage with comprehensive test suite"
+        status: "Merged"
+        comments: 49
+      
+      - pr: "#5952"
+        title: "Add OrgSelector component for LoginPage Phase 2"
+        description: "New feature implementation for authentication flow"
+        status: "Merged"
+      
+      - pr: "#5297"
+        title: "Base Modal shared component"
+        description: "Created reusable modal component for consistent UI"
+        status: "Merged"
+      
+      - pr: "#5262"
+        title: "Add invite-only toggle for events"
+        description: "Major feature addition with 334 comments"
+        status: "Merged"
+        comments: 334
+        impact: "Enabled new event privacy feature across the platform"
+      
+      - pr: "#5024"
+        title: "Fix GraphQL query arguments for getPledgesByUserId query"
+        description: "Bug fix for GraphQL API integration"
+        status: "Merged"
+    
+    technologies: ["TypeScript", "React", "GraphQL", "Material-UI", "Jest", "ESLint"]
+    key_achievements:
+      - "Contributed 10 merged PRs with 600+ total comments/reviews in talawa-admin"
+      - "Led major refactoring efforts improving code quality and performance"
+      - "Implemented new features including event visibility and authentication components"
+      - "Significantly improved test coverage and code maintainability"
+  
+  - project: "Talawa API"
+    organization: "PalisadoesFoundation"
+    role: "Contributor"
+    repository: "https://github.com/PalisadoesFoundation/talawa-api"
+    total_prs: "4 merged PRs"
+    contributions:
+      - pr: "#4213"
+        title: "Enforce mutually exclusive event visibility flags"
+        description: "Backend validation for event visibility feature"
+        status: "Merged"
+      
+      - pr: "#4195"
+        title: "Upgrade type-provider-typebox to v6 and typebox to v1"
+        description: "Dependency upgrade for improved type safety"
+        status: "Merged"
+      
+      - pr: "#4062"
+        title: "Implement invite-only events feature"
+        description: "Backend implementation for invite-only events"
+        status: "Merged"
+        comments: 88
+        impact: "Full-stack feature implementation (frontend + backend)"
+      
+      - pr: "#3996"
+        title: "Add 100% coverage for src/graphql/types/Query/tagFolder.ts"
+        description: "Achieved complete test coverage for GraphQL query"
+        status: "Merged"
+    
+    technologies: ["TypeScript", "Node.js", "GraphQL", "MongoDB", "Jest"]
+    key_achievements:
+      - "Implemented full-stack features across frontend and backend"
+      - "Achieved 100% test coverage for critical GraphQL queries"
+      - "Contributed to dependency upgrades and type safety improvements"
+  
+  - project: "stdlib (Standard Library for JavaScript)"
+    organization: "stdlib-js"
+    role: "Contributor"
+    repository: "https://github.com/stdlib-js/stdlib"
+    total_prs: "8 merged PRs"
+    contributions:
+      - "Improved documentation for complex number instances in ndarray/base/broadcast-scalar"
+      - "Refactored benchmarks to use dynamic memory allocation in BLAS functions"
+      - "Refactored multiple array utility functions to use string interpolation"
+      - "Contributed to array/base modules: accessor, bifurcate-indices, bifurcate-indices-by"
+      - "Improved assertion utilities: has-same-values, has-equal-values-indexed, contains"
+    technologies: ["JavaScript", "Node.js", "BLAS", "Performance Optimization"]
+    key_achievements:
+      - "Contributed 8 PRs focused on performance and code quality"
+      - "Improved benchmark accuracy and documentation"
+      - "Multiple PRs marked 'Ready To Merge' indicating high code quality"
+  
+  - project: "AsyncAPI CLI"
+    organization: "AsyncAPI"
+    role: "Contributor"
+    repository: "https://github.com/asyncapi/cli"
+    total_prs: "1 merged PR"
+    contributions:
+      - pr: "#1917"
+        title: "Remove unnecessary await from startPreview call"
+        description: "Code quality improvement"
+        status: "Ready to Merge"
+    technologies: ["JavaScript", "Node.js", "CLI"]
+  
+  - project: "Meshery"
+    organization: "Layer5"
+    role: "Contributor"
+    repository: "https://github.com/meshery/meshery"
+    total_prs: "1 merged PR"
+    contributions:
+      - pr: "#16604"
+        title: "Prevent duplicate PR entries in release notes"
+        description: "Fixed CI/CD release drafter configuration"
+        status: "Merged"
+    technologies: ["YAML", "CI/CD", "GitHub Actions"]
+
+# Personal Projects (VERIFIED from GitHub)
+projects:
+  - name: "Brief"
+    description: "AI-powered article and blog summarization website"
+    repository: "https://github.com/ashutoshsao/brief"
+    live_url: "" # TODO: Add if deployed
+    technologies: ["TypeScript", "React", "Next.js", "AI/ML"]
+    highlights:
+      - "Implements AI-powered text summarization for articles and blogs"
+      - "Modern responsive UI with Next.js"
+    status: "Active Development"
+  
+  - name: "Blog Site"
+    description: "Personal blog platform with content management"
+    repository: "https://github.com/ashutoshsao/blog-site"
+    live_url: "" # TODO: Add if deployed
+    technologies: ["TypeScript", "Next.js", "React"]
+    highlights:
+      - "Full-featured blog platform"
+      - "SEO optimized content delivery"
+    status: "Active Development"
+  
+  - name: "Second Brain"
+    description: "Knowledge management and note-taking application"
+    repository: "https://github.com/ashutoshsao/second-brain"
+    live_url: "" # TODO: Add if deployed
+    technologies: ["TypeScript", "React"]
+    highlights:
+      - "Personal knowledge management system"
+      - "Note organization and retrieval"
+    status: "Active Development"
+  
+  - name: "Portfolio Website"
+    description: "Personal portfolio showcasing projects and skills"
+    repository: "https://github.com/ashutoshsao/portfolio"
+    live_url: "https://ashutoshsao.com"
+    technologies: ["TypeScript", "React", "Next.js"]
+    highlights:
+      - "Professional portfolio website"
+      - "Showcases projects and open-source contributions"
+    status: "Live"
+  
+  - name: "Verclo-Bot"
+    description: "Serverless Discord verification bot (Verification Over Cloud)"
+    repository: "https://github.com/ashutoshsao/verclo-bot"
+    live_url: "Running on AWS Lambda"
+    technologies: ["Node.js", "Discord.js", "AWS Lambda", "MySQL"]
+    highlights:
+      - "Runs 24/7 on AWS Lambda for high availability and cost efficiency"
+      - "Email-based OTP verification system with MySQL persistence"
+      - "Automated role assignment upon successful verification"
+      - "Serverless architecture for scalability"
+    status: "Production"
+    technical_details:
+      - "Validates email addresses and sends verification codes"
+      - "Stores user verification data in MySQL database"
+      - "Implements secure verification workflow"
+  
+  - name: "Domain Verifier"
+    description: "CLI tool for DNS verification and email security checks"
+    repository: "https://github.com/ashutoshsao/domain-verifier"
+    technologies: ["Go", "DNS", "CLI"]
+    highlights:
+      - "Fast DNS lookups and domain configuration validation"
+      - "Checks MX records for email routing capability"
+      - "Verifies SPF and DMARC records for email security"
+      - "Color-coded CLI output for quick assessment"
+    status: "Production"
+    technical_details:
+      - "Automated verification of critical email security records"
+      - "Efficient Go implementation for performance"
+  
+  - name: "Payment App"
+    description: "Payment processing application"
+    repository: "https://github.com/ashutoshsao/payment-app"
+    live_url: "" # TODO: Add if deployed
+    technologies: ["TypeScript", "React"]
+    highlights:
+      - "Secure payment integration"
+      - "Transaction management system"
+    status: "Development"
+  
+  - name: "Serverless Backend"
+    description: "Serverless backend architecture implementation"
+    repository: "https://github.com/ashutoshsao/serverless-backend"
+    technologies: ["Node.js", "AWS Lambda", "API Gateway"]
+    highlights:
+      - "Scalable serverless architecture"
+      - "Cost-efficient cloud deployment"
+    status: "Development"
+  
+  - name: "Go Server"
+    description: "High-performance API server built with Go"
+    repository: "https://github.com/ashutoshsao/goServer"
+    technologies: ["Go", "REST API"]
+    highlights:
+      - "High-performance HTTP server"
+      - "RESTful API implementation"
+    status: "Development"
+
+# Education
+education:
+  - degree: "B.Tech in Computer Science"
+    institution: "SSTC (Shri Shankaracharya Technical Campus)"
+    location: "Bhilai, India"
+    graduation_date: "September 2025 (Expected)"
+    current_year: "Final Year (4th Year)"
+    gpa: "7.47 / 10.0"
+    relevant_coursework:
+      - "Object-Oriented Programming in C++"
+      - "Operating Systems"
+      - "Data Structures and Algorithms"
+      - "Computer Hardware"
+      - "Unix Tools and Scripting"
+  
+  - degree: "Higher Secondary School"
+    institution: "Kendriya Vidyalaya RJN"
+    location: "Rajanandgaon, India"
+    graduation_date: "April 2020"
+
+# Work Experience
+work_experience:
+  # TODO: Add any internships, jobs, or freelance work
+  # Example format:
+  # - company: "Company Name"
+  #   position: "Software Engineering Intern"
+  #   location: "City, Country"
+  #   start_date: "June 2024"
+  #   end_date: "August 2024"
+  #   responsibilities:
+  #     - "Developed features for..."
+  #   achievements:
+  #     - "Improved performance by X%"
+  #   technologies: ["React", "Node.js"]
+
+# Certifications
+certifications:
+  # TODO: Add any certifications you have
+  # Example:
+  # - name: "AWS Certified Developer"
+  #   issuer: "Amazon Web Services"
+  #   date: "2024"
+  #   credential_url: ""
+
+# Achievements & Awards
+achievements:
+  - "Contributed 22+ merged PRs to major open-source projects (Talawa 14, stdlib 8, AsyncAPI 1, Meshery 1)"
+  - "Earned 'Pull Shark x2' and 'YOLO' GitHub achievements for significant PR contributions"
+  - "Led major refactoring efforts in Talawa Admin with 600+ total PR comments/reviews"
+  - "Achieved 100% test coverage for critical GraphQL queries in Talawa API"
+  - "Built and deployed production-ready serverless applications on AWS Lambda"
+  - "Active contributor to PalisadoesFoundation with 14 merged PRs across talawa-admin and talawa-api"
+
+# Technical Interests
+technical_interests:
+  os_and_systems:
+    title: "Operating Systems & System Architecture"
+    description: "Deep expertise in system-level configuration and boot management"
+    achievements:
+      - "Configured dual-boot setup with Arch Linux and Windows 11 on separate drives"
+      - "Expert knowledge of UEFI/BIOS, bootloaders (GRUB), and EFI partitions"
+      - "Experience with Btrfs filesystem and live USB creation"
+    technologies: ["Arch Linux", "Btrfs", "GRUB", "UEFI", "BIOS"]
+  
+  hardware:
+    title: "Computer Hardware & Architecture"
+    description: "Hands-on experience with computer assembly and hardware optimization"
+    achievements:
+      - "Built custom high-performance desktop achieving better price-to-performance ratio"
+      - "Deep understanding of CPU/GPU architectures and nomenclature"
+      - "Knowledge of modern interfaces: PCIe 4.0 x16, Thunderbolt, 10Gb Ethernet"
+      - "Expertise in DDR memory, NAND storage, and network technologies"
+    future_learning:
+      - "System on Chip (SoC) architecture"
+      - "CPU lithography and chip fabrication"
+      - "ARM and x86 assembly languages"
+
+# Additional Information
+additional_info:
+  languages:
+    - language: "English"
+      proficiency: "Fluent"
+    - language: "Hindi"
+      proficiency: "Native"
+  
+  github_stats:
+    total_repositories: 27
+    achievements: ["Pull Shark x2", "YOLO", "Quickdraw"]
+    total_merged_prs: "22+"
+    major_contributions:
+      - "PalisadoesFoundation: 14 PRs"
+      - "stdlib-js: 8 PRs"
+      - "AsyncAPI: 1 PR"
+      - "Meshery: 1 PR"
+  
+  competitive_programming:
+    note: "Active DSA practice across multiple platforms"
+    platforms:
+      - name: "LeetCode"
+        username: "ashutoshsao"
+        url: "https://leetcode.com/u/ashutoshsao/"
+        # Stats to be updated manually (API blocked)
+      
+      - name: "Codeforces"
+        username: "ashutoshsao"
+        url: "https://codeforces.com/profile/ashutoshsao"
+        # Stats to be updated manually (API blocked)
+      
+      - name: "CodeChef"
+        username: "ashutoshsao"
+        url: "https://www.codechef.com/users/ashutoshsao"
+        rating: 951
+        problems_solved: 11
+        contests_participated: 2
+        contests:
+          - "July Long One 2022 Division 4"
+          - "Starters 47 Division 4"
+      
+      - name: "GeeksforGeeks"
+        username: "ashutosh_sao"
+        url: "https://www.geeksforgeeks.org/user/ashutosh_sao/"
+        score: 60
+        problems_solved: 20
+        institution: "SSTC"
+    
+    dsa_repository:
+      name: "DSA Solutions"
+      url: "https://github.com/ashutoshsao/dsa-solutions"
+      description: "Personal collection of DSA problem solutions organized for learning and showcasing coding skills"
+      topics_covered:
+        - "Arrays and Strings"
+        - "Dynamic Programming"
+        - "Recursion"
+        - "Searching (Binary Search)"
+        - "Sorting (Merge, Quick, Count)"
+        - "Two Pointers"
+        - "Data Structures"
+        - "Math and Number Theory"
+      features:
+        - "Core Algorithm Implementations (educational reference code)"
+        - "Algorithm-first categorization for problem solutions"
+        - "Solutions from LeetCode, Codeforces, CodeChef, GFG"
+
+# References
+references:
+  available_upon_request: true
+
+# Resume Building Tips
+resume_tips:
+  quantifiable_achievements:
+    - "Instead of: 'Contributed to Talawa' → Write: 'Contributed 14 merged PRs to Talawa with 600+ code review comments'"
+    - "Instead of: 'Built web apps' → Write: 'Built 9 production applications using TypeScript, React, and serverless architecture'"
+    - "Instead of: 'Fixed bugs' → Write: 'Achieved 100% test coverage for critical GraphQL queries'"
+  
+  action_verbs:
+    - "Implemented, Developed, Architected, Optimized, Refactored"
+    - "Led, Contributed, Achieved, Enhanced, Designed"
+  
+  tailoring:
+    - "For frontend roles: Emphasize React, TypeScript, Material-UI, testing"
+    - "For backend roles: Emphasize Node.js, GraphQL, serverless, databases"
+    - "For full-stack roles: Highlight end-to-end feature implementations"
+    - "For open-source focused companies: Lead with Talawa contributions"
+  
+  what_to_highlight:
+    - "Major PRs with high comment counts (shows collaboration and thoroughness)"
+    - "Full-stack features (frontend + backend implementation)"
+    - "Performance optimizations and test coverage improvements"
+    - "Production deployments (Verclo-Bot on AWS Lambda)"
+
+# ============================================================================
+# TARGET PLATFORMS - International Remote & Freelance (Side Quest)
+# ============================================================================
+
+target_platforms:
+
+  # --------------------------------------------------------------------------
+  # TOPTAL (Top 3% Talent Network)
+  # --------------------------------------------------------------------------
+  toptal:
+    url: "https://www.toptal.com"
+    description: "Elite freelance network accepting only top 3% of applicants"
+    pay_range: "$60-150/hour | $2000-6000+/month (part-time to full-time)"
+    acceptance_rate: "3%"
+    process_duration: "3-8 weeks"
+    
+    screening_stages:
+      - stage: "1. Language & Personality Interview"
+        pass_rate: "26.4%"
+        requirements:
+          - "Excellent English (reading, writing, speaking)"
+          - "Professional communication skills"
+          - "Work experience discussion"
+        your_readiness: "Ready ✅"
+        notes: "Your PR discussions (600+ comments) show strong English communication"
+      
+      - stage: "2. Timed Skills Test (Codility)"
+        pass_rate: "7.4%"
+        requirements:
+          - "Algorithmic problem solving"
+          - "Data structures knowledge"
+          - "Time-limited coding"
+        your_readiness: "Needs Work ⚠️"
+        gap: "Need to practice timed DSA problems"
+        action: "Complete 50-100 LeetCode Medium problems"
+      
+      - stage: "3. Live Screening (Video Interview)"
+        pass_rate: "3.6%"
+        requirements:
+          - "Real-time coding with senior engineer"
+          - "Problem-solving explanation"
+          - "Depth of experience demonstration"
+        your_readiness: "Partial ⚠️"
+        gap: "Need practice explaining code while solving"
+        action: "Practice mock interviews on Pramp or interviewing.io"
+      
+      - stage: "4. Test Project (1-3 weeks)"
+        pass_rate: "3.2%"
+        requirements:
+          - "Production-ready code"
+          - "Clean architecture"
+          - "Tests and documentation"
+          - "Best practices adherence"
+        your_readiness: "Strong ✅"
+        notes: "Your OSS contributions demonstrate production-quality code"
+    
+    required_skills_react:
+      have:
+        - "✅ React.js core principles and hooks"
+        - "✅ JavaScript DOM manipulation"
+        - "✅ State management (Context API)"
+        - "✅ RESTful APIs"
+        - "✅ Modern build tools (npm, Webpack concepts)"
+        - "✅ TypeScript"
+        - "✅ Testing (Jest, React Testing Library)"
+      need_to_add:
+        - "⬜ Redux/Flux workflows (nice-to-have)"
+        - "⬜ Immutable.js (nice-to-have)"
+        - "⬜ Performance optimization techniques"
+    
+    required_skills_nodejs:
+      have:
+        - "✅ TypeScript + Node.js"
+        - "✅ PostgreSQL in production"
+        - "✅ GraphQL API design"
+        - "✅ REST API design"
+        - "✅ Testing (unit/integration)"
+        - "✅ MongoDB + Mongoose"
+        - "✅ Express.js"
+      need_to_add:
+        - "✅ OAuth2/NextAuth.js (Google, GitHub, Email/Password) - DONE!"
+        - "⬜ WebSockets (Socket.io)"
+        - "⬜ Microservices architecture"
+        - "⬜ Security best practices (OWASP)"
+    
+    minimum_experience_required: "2-3 years (5+ preferred)"
+    your_equivalent_experience: "~1.5 years (OSS contributions count as experience)"
+    
+    overall_readiness: "60%"
+    recommendation: "Apply in 6-12 months after gaining more experience and DSA practice"
+    immediate_action_items:
+      - "Complete 100 LeetCode problems (focus on Medium)"
+      - "Learn Redis caching"
+      - "Add Socket.io to one project for real-time features"
+      - "Study system design basics"
+
+  # --------------------------------------------------------------------------
+  # TURING (Remote Jobs with US Companies)
+  # --------------------------------------------------------------------------
+  turing:
+    url: "https://www.turing.com"
+    description: "AI-matched remote jobs with top US companies"
+    pay_range: "$500-5000+/month depending on role and experience"
+    process_duration: "3-6 hours of tests and interviews"
+    
+    requirements:
+      minimum:
+        - education: "Bachelor's in CS/IT or equivalent"
+          your_status: "✅ B.Tech in CS (in progress)"
+        - experience: "3+ years (some exceptions for strong candidates)"
+          your_status: "⚠️ Gap - need to emphasize OSS as equivalent"
+        - programming: "Proficiency in at least one language (JS, Python, etc.)"
+          your_status: "✅ TypeScript, JavaScript, Go, Python"
+        - api_design: "Experience designing and delivering APIs"
+          your_status: "✅ GraphQL + REST experience"
+        - patterns: "Familiarity with MVP, MVC, MVVM patterns"
+          your_status: "⚠️ Need to formally learn these patterns"
+      
+      preferred:
+        - "✅ Git proficiency"
+        - "⬜ Agile/Scrum methodology (add to learning)"
+        - "⬜ Jira experience (sign up and explore)"
+        - "✅ Strong communication skills"
+    
+    test_process:
+      - "Automated skill tests based on listed skills"
+      - "Coding challenges (similar to LeetCode)"
+      - "Technical interviews"
+      - "Soft skills assessment (English, remote readiness)"
+    
+    overall_readiness: "55%"
+    recommendation: "Can apply now, but strengthen DSA skills first"
+    immediate_action_items:
+      - "Create Turing profile emphasizing TypeScript + React + Node.js"
+      - "Practice coding challenges on HackerRank (Turing uses similar)"
+      - "Ensure stable internet + good audio/video setup"
+      - "Learn Agile/Scrum basics (free Coursera course)"
+
+  # --------------------------------------------------------------------------
+  # OTHER REMOTE PLATFORMS (More Accessible)
+  # --------------------------------------------------------------------------
+  other_platforms:
+    
+    arc_dev:
+      url: "https://arc.dev"
+      description: "Remote developer jobs, less rigorous than Toptal"
+      pay_range: "$1000-4000+/month"
+      your_readiness: "70% ✅"
+      action: "Apply now - good fit for your profile"
+    
+    remote_ok:
+      url: "https://remoteok.com"
+      description: "Job board for remote positions"
+      pay_range: "Varies ($500-$10000+/month)"
+      your_readiness: "75% ✅"
+      action: "Apply to junior/mid-level React/Node.js positions"
+    
+    we_work_remotely:
+      url: "https://weworkremotely.com"
+      description: "Curated remote job listings"
+      pay_range: "Varies"
+      your_readiness: "70% ✅"
+      action: "Good for finding USD-paying remote roles"
+    
+    upwork:
+      url: "https://www.upwork.com"
+      description: "Freelance marketplace (build reputation first)"
+      pay_range: "$15-100+/hour (after building profile)"
+      your_readiness: "65% ✅"
+      action: "Start with small projects to build reputation"
+      tips:
+        - "Highlight OSS contributions heavily"
+        - "Start with lower rates to build reviews"
+        - "Specialize in React + TypeScript"
+    
+    github_jobs:
+      url: "Various (through GitHub profile)"
+      description: "Companies that hire based on GitHub contributions"
+      your_readiness: "85% ✅✅"
+      action: "Your OSS record makes you highly attractive here"
+      companies_to_target:
+        - "PalisadoesFoundation (you already have relationship)"
+        - "AsyncAPI (already contributed)"
+        - "Layer5/Meshery (already contributed)"
+        - "Supabase, Hasura (GraphQL focus)"
+        - "Vercel, Netlify (Next.js focus)"
+
+  # --------------------------------------------------------------------------
+  # RECOMMENDED PATH TO $1500/MONTH
+  # --------------------------------------------------------------------------
+  recommended_path:
+    phase_1_immediate:
+      timeline: "Now - 1 month"
+      actions:
+        - "Apply to Arc.dev, RemoteOK, WeWorkRemotely"
+        - "Create Turing profile"
+        - "Reach out to PalisadoesFoundation for potential opportunity"
+        - "Apply to GSoC 2026 (if timeline allows)"
+      expected_outcome: "$500-1000/month opportunities"
+    
+    phase_2_short_term:
+      timeline: "1-3 months"
+      actions:
+        - "Complete 50-100 LeetCode problems"
+        - "Add OAuth2 + Socket.io to a project"
+        - "Build Upwork reputation with 3-5 small projects"
+        - "Apply to more remote positions with improved DSA skills"
+      expected_outcome: "$1000-1500/month opportunities"
+    
+    phase_3_medium_term:
+      timeline: "3-6 months"
+      actions:
+        - "Attempt Toptal screening (for experience even if fail)"
+        - "Complete Turing vetting process"
+        - "Have 200+ LeetCode problems solved"
+        - "Add Redis, system design knowledge"
+      expected_outcome: "$1500-2500/month opportunities"
+    
+    phase_4_goal:
+      timeline: "6-12 months"
+      actions:
+        - "Re-attempt Toptal if needed"
+        - "Build strong Upwork/freelance reputation"
+        - "Target senior-level entry positions"
+      expected_outcome: "$2000-4000+/month opportunities"
+
+  # --------------------------------------------------------------------------
+  # SKILLS GAP SUMMARY FOR REMOTE PLATFORMS
+  # --------------------------------------------------------------------------
+  skills_gap_summary:
+    critical_gaps:
+      - skill: "DSA/Algorithm Practice"
+        importance: "HIGH - Required for all platforms"
+        current: "Basic (sorting, searching)"
+        target: "150+ LeetCode Medium problems"
+        action: "Daily 1-2 problem practice"
+      
+      - skill: "Professional Experience"
+        importance: "HIGH - Most platforms want 3+ years"
+        current: "0 formal internships"
+        workaround: "Frame OSS as equivalent (18+ PRs to major projects)"
+        action: "Get any internship (even 1-2 months)"
+    
+    medium_gaps:
+      - skill: "System Design"
+        current: "Basic"
+        target: "Understand common patterns"
+        resource: "System Design Primer GitHub repo"
+      
+      - skill: "Authentication (OAuth, JWT)"
+        current: "✅ Implemented with NextAuth.js"
+        providers: ["Google OAuth", "GitHub OAuth", "Email/Password", "Cookies"]
+        status: "COMPLETE"
+      
+      - skill: "Real-time (WebSockets)"
+        current: "Not demonstrated"
+        target: "Add to one project"
+        action: "Add Socket.io to Chat App or create new real-time project"
+    
+    nice_to_have:
+      - "Redis caching"
+      - "Kubernetes basics"
+      - "✅ CI/CD pipelines (GitHub Actions + EC2 deploy scripts) - DONE!"
+      - "Microservices architecture"
