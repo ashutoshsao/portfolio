@@ -1,7 +1,7 @@
-'use client'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
+import Title from './ui/Title'
 
 // The GitHubCalendar component has built-in loading skeleton that matches exact dimensions
 const GitHubCalendar = dynamic(
@@ -13,13 +13,6 @@ const GitHubCalendar = dynamic(
 
 export default function GitGraph() {
     const scrollContainerRef = useRef<HTMLDivElement>(null)
-
-    // Get current date in format: "Month Day, Year"
-    const currentDate = new Date().toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    })
 
     // Scroll to right (most recent) on mobile when calendar loads
     useEffect(() => {
@@ -60,15 +53,9 @@ export default function GitGraph() {
 
     return (
         <div className="w-full flex flex-col items-center mt-8 mb-4 gap-4">
-            {/* Date */}
-            <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
-                {currentDate}
-            </p>
-
+            
             {/* Title */}
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white text-center">
-                GitHub Contributions
-            </h2>
+            <Title title="GitHub Contributions" />
 
             {/* Calendar Container - Scrollable on mobile, centered on desktop */}
             <div className="w-full sm:flex sm:justify-center">

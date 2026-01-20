@@ -12,6 +12,8 @@
   --color-dark-card: #1a1f2e;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+  --font-display: var(--font-cinzel);
 }
 
 @media (prefers-color-scheme: dark) {

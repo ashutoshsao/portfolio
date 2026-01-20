@@ -7,8 +7,8 @@ interface TitleProps {
 
 const Title = ({ title }: TitleProps) => {
   return (
-    <div className='px-10'>
-      <h1 className='text-[1.6rem] max-sm:text-2xl font-semibold tracking-tight text-start max-sm:text-center'>
+    <div className='px-10 w-full flex justify-center'>
+      <h1 className='text-3xl font-display font-semibold tracking-[0.2em] text-[#a87cc3] text-center uppercase mb-8'>
         {title}
       </h1>
     </div>
