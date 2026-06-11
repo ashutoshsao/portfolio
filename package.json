@@ -10,11 +10,12 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "framer-motion": "^12.40.0",
     "lucide-react": "^0.562.0",
     "next": "16.0.8",
     "react": "19.2.0",
+    "react-activity-calendar": "^3.2.0",
     "react-dom": "19.2.0",
-    "react-github-calendar": "^5.0.0",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

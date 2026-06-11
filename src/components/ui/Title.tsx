@@ -7,13 +7,10 @@ interface TitleProps {
 
 const Title = ({ title }: TitleProps) => {
   return (
-    <div className='px-10 w-full flex justify-center'>
-      <h1 className='text-3xl font-display font-semibold tracking-[0.2em] text-[#a87cc3] text-center uppercase mb-8'>
-        {title}
-      </h1>
-    </div>
+    <h2 className="text-sm font-semibold leading-none text-[var(--foreground)]">
+      {title}
+    </h2>
   )
 }
 
 export default Title
-
