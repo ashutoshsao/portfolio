@@ -25,7 +25,7 @@ export default function CopyEmail({ label }: { label?: string }) {
       onClick={copy}
       aria-label={`Copy email address ${site.email}`}
       title={site.email}
-      className="link cursor-pointer font-mono text-[11.5px]"
+      className="link cursor-pointer font-mono text-[14px]"
     >
       {copied ? 'copied ✓' : (label ?? site.email)}
     </button>
