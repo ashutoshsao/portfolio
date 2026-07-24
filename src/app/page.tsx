@@ -8,10 +8,10 @@ import { experience, projects, site } from '@/data/site'
 
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-[620px] flex-col gap-16 px-6 py-16 sm:py-24">
+    <main className="mx-auto flex min-h-screen w-full max-w-[830px] flex-col gap-16 px-6 py-16 sm:py-24">
       <header className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
         <span className="kicker">{site.name}</span>
-        <nav className="flex items-baseline gap-x-4 font-mono text-[11.5px]">
+        <nav className="flex items-baseline gap-x-4 font-mono text-[14px]">
           <a href={site.github} target="_blank" rel="noopener noreferrer" className="link">
             github
           </a>
@@ -27,11 +27,11 @@ export default function Home() {
       </header>
 
       <section className="grid gap-6">
-        <h1 className="serif text-[2rem] font-normal leading-[1.25] tracking-[-0.01em] text-[var(--ink)] sm:text-[2.4rem]">
+        <h1 className="serif text-[2.3rem] font-normal leading-[1.25] tracking-[-0.01em] text-[var(--ink)] sm:text-[2.8rem]">
           I build real-time systems and AI agents —{' '}
           <em className="text-[var(--accent)]">software that earns trust</em>.
         </h1>
-        <div className="grid max-w-[58ch] gap-4 text-[15px] leading-[1.75] text-[var(--muted)]">
+        <div className="grid gap-4 text-[16.5px] leading-[1.8] text-[var(--muted)]">
           <p>
             I&apos;m Ashutosh, a software engineer from {site.location}. I
             care how a system is designed, how it scales, and how it behaves
@@ -50,17 +50,17 @@ export default function Home() {
           {experience.map((item) => (
             <article key={item.org} className="grid gap-2.5">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h3 className="text-[15px] font-semibold tracking-tight text-[var(--ink)]">
+                <h3 className="text-[18px] font-semibold tracking-tight text-[var(--ink)]">
                   {item.org}
                 </h3>
-                <span className="serif text-[13.5px] italic text-[var(--accent)]">
+                <span className="serif text-[17px] italic text-[var(--accent)]">
                   {item.role}
                 </span>
-                <span className="ml-auto font-mono text-[11px] text-[var(--faint)]">
+                <span className="ml-auto font-mono text-[13px] text-[var(--faint)]">
                   {item.period}
                 </span>
               </div>
-              <p className="max-w-[58ch] text-[14px] leading-[1.7] text-[var(--muted)]">
+              <p className="text-[16px] leading-[1.75] text-[var(--muted)]">
                 {item.description}
               </p>
               {item.link && (
@@ -68,7 +68,7 @@ export default function Home() {
                   href={item.link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="link w-fit font-mono text-[11.5px]"
+                  className="link w-fit font-mono text-[13.5px]"
                 >
                   {item.link.label}
                 </a>
