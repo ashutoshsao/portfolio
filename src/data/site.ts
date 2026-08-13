@@ -20,15 +20,14 @@ export type WorkItem = {
 
 export const projects: WorkItem[] = [
   {
-    title: 'Perps',
+    title: 'Nebula',
     year: '2026',
-    status: 'shipping to production',
+    status: 'live in production',
     description:
-      'A perpetual-futures exchange built from scratch — real-time matching, live prices over WebSockets, and deterministic replay of every trade.',
-    stack: ['TypeScript', 'Bun', 'Redis Streams', 'WebSockets', 'PostgreSQL', 'Kubernetes'],
-    code: 'https://github.com/ashutoshsao/Perps',
-    // add the live URL once the Kubernetes deployment is up:
-    // live: 'https://perps.ashutoshsao.com',
+      'A perpetual-futures exchange built from scratch — single in-memory matching engine, real-time order book and price feeds over WebSockets, and deterministic snapshot/replay recovery, deployed on GKE.',
+    stack: ['TypeScript', 'Bun', 'Redis Streams', 'WebSockets', 'PostgreSQL', 'TimescaleDB', 'Kubernetes'],
+    code: 'https://github.com/ashutoshsao/nebula',
+    live: 'https://nebula.ashutoshsao.com',
   },
   {
     title: 'Plum',
