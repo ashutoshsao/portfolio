@@ -1,5 +1,5 @@
 # Resume Information Repository
-# Last Updated: 2026-01-10
+# Last Updated: 2026-08-25
 # This file contains VERIFIED information from GitHub and actual contributions
 
 personal_info:
@@ -8,15 +8,15 @@ personal_info:
   twitter: "https://x.com/ashutosh_sao"
   website: "https://ashutoshsao.com"
   email: "ashutoshsao17@gmail.com"
-  phone: "+91-8319686432"
-  location: "Bhilai, India"
+  phone: "+91-7587836037"
+  location: "Rajnandgaon, India"
   linkedin: "https://www.linkedin.com/in/ashutoshsao/"
 
 summary:
   # TODO: Customize this summary based on the job you're applying for
-  - "Computer Science student with strong focus on full-stack development and open-source contributions"
-  - "Contributed 22+ merged PRs to major open-source projects including Talawa (14 PRs) and stdlib-js (8 PRs)"
-  - "Built and deployed multiple production-ready applications using TypeScript, React, Go, and serverless architecture"
+  - "Software engineer in residence at Super30 (100xSchool), building production-grade systems full-time"
+  - "Built and deployed Nebula, a perpetual-futures exchange (matching engine, Redis Streams, WebSockets, Kubernetes), live in production"
+  - "Contributed 26+ merged PRs to major open-source projects including Talawa (16 PRs) and stdlib-js (8 PRs)"
 
 skills:
   programming_languages:
@@ -135,7 +135,7 @@ open_source_contributions:
     organization: "PalisadoesFoundation"
     role: "Active Contributor"
     repository: "https://github.com/PalisadoesFoundation/talawa-admin"
-    total_prs: "10 merged PRs (14 total across Talawa Admin + API)"
+    total_prs: "10 merged PRs itemized below (16 total merged across Talawa Admin + API as of 2026-08; 2 additional Admin/API PRs merged since this list was last itemized)"
     contributions:
       - pr: "#6301"
         title: "Replace MUI barrel imports with path-specific imports in LoginPage"
@@ -278,6 +278,29 @@ open_source_contributions:
 
 # Personal Projects (VERIFIED from GitHub)
 projects:
+  - name: "Nebula"
+    description: "A perpetual-futures exchange built from scratch: a single in-memory matching engine, Redis Streams as the command bus between API and engine, real-time order book/price feeds over WebSockets, and deterministic snapshot/replay recovery to Cloudflare R2."
+    repository: "https://github.com/ashutoshsao/nebula"
+    live_url: "https://nebula.ashutoshsao.com"
+    technologies: ["TypeScript", "Bun", "Express 5", "Redis Streams", "PostgreSQL", "TimescaleDB", "Prisma", "WebSockets", "Kubernetes (GKE)", "React", "Vite"]
+    highlights:
+      - "Single-writer in-memory matching engine handles matching, margin locks, position netting, liquidation, and funding-rate settlement"
+      - "API never mutates state directly — HTTP requests become typed commands on a Redis stream, resolved back via correlation ID"
+      - "Deterministic order/fill IDs derived from Redis stream entry IDs, making crash recovery and replay idempotent"
+      - "Snapshot-to-R2 + stream-ID replay gives crash recovery without a DB round-trip in the hot matching path"
+      - "Monorepo of 8 services (API, engine, price-feeder, market-maker bots, db-poller, WebSocket gateway, web client, tests) run as separate GKE deployments"
+      - "Self-hosted TimescaleDB and Redis in-cluster; ingress-nginx + cert-manager for routing and TLS"
+    status: "Live in production"
+
+  - name: "Plum"
+    description: "An AI agent harness built from first principles — planning, tool orchestration, and context/memory management across a session."
+    repository: "https://github.com/ashutoshsao/plum"
+    live_url: ""
+    technologies: ["TypeScript", "Bun", "Google Gemini API", "Tool Calling", "Context Management"]
+    highlights:
+      - "Implements the agent loop, tool-orchestration, and context-handling layers from scratch rather than using an existing framework"
+    status: "In progress"
+
   - name: "Brief"
     description: "AI-powered article and blog summarization website"
     repository: "https://github.com/ashutoshsao/brief"
@@ -396,6 +419,17 @@ education:
     location: "Rajanandgaon, India"
     graduation_date: "April 2020"
 
+# Residencies (not formal employment — hackerhouse-style program)
+residencies:
+  - program: "Super30 (100xdevs)"
+    role: "Resident"
+    location: "Noida, India (on-campus)"
+    start_date: "2026"
+    end_date: "Present"
+    description: "Living on-campus at 100xdevs' six-month post-grad hackerhouse, building production-grade systems full-time alongside other residents."
+    notable_work: "Built Nebula (see projects) from scratch through to production deployment during the residency"
+    link: "https://100xschool.in/post-grad"
+
 # Work Experience
 work_experience:
   # TODO: Add any internships, jobs, or freelance work
@@ -422,12 +456,13 @@ certifications:
 
 # Achievements & Awards
 achievements:
-  - "Contributed 22+ merged PRs to major open-source projects (Talawa 14, stdlib 8, AsyncAPI 1, Meshery 1)"
+  - "Designed and shipped Nebula, a perpetual-futures exchange with a single in-memory matching engine, Redis Streams command bus, WebSocket realtime feeds, and deterministic snapshot/replay recovery — live in production on GKE"
+  - "Contributed 26+ merged PRs to major open-source projects (Talawa 16, stdlib 8, AsyncAPI 1, Meshery 1)"
   - "Earned 'Pull Shark x2' and 'YOLO' GitHub achievements for significant PR contributions"
   - "Led major refactoring efforts in Talawa Admin with 600+ total PR comments/reviews"
   - "Achieved 100% test coverage for critical GraphQL queries in Talawa API"
   - "Built and deployed production-ready serverless applications on AWS Lambda"
-  - "Active contributor to PalisadoesFoundation with 14 merged PRs across talawa-admin and talawa-api"
+  - "Active contributor to PalisadoesFoundation with 16 merged PRs across talawa-admin and talawa-api"
 
 # Technical Interests
 technical_interests:
@@ -464,9 +499,9 @@ additional_info:
   github_stats:
     total_repositories: 27
     achievements: ["Pull Shark x2", "YOLO", "Quickdraw"]
-    total_merged_prs: "22+"
+    total_merged_prs: "26+"
     major_contributions:
-      - "PalisadoesFoundation: 14 PRs"
+      - "PalisadoesFoundation: 16 PRs"
       - "stdlib-js: 8 PRs"
       - "AsyncAPI: 1 PR"
       - "Meshery: 1 PR"

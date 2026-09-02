@@ -27,7 +27,7 @@ export const projects: WorkItem[] = [
       'A perpetual-futures exchange built from scratch — single in-memory matching engine, real-time order book and price feeds over WebSockets, and deterministic snapshot/replay recovery, deployed on GKE.',
     stack: ['TypeScript', 'Bun', 'Redis Streams', 'WebSockets', 'PostgreSQL', 'TimescaleDB', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/nebula',
-    live: 'https://nebula.ashutoshsao.com',
+    live: 'https://nebula.ashutoshsao.com/trade/BTC-PERP',
   },
   {
     title: 'Plum',
