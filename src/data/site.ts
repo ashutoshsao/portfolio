@@ -20,6 +20,15 @@ export type WorkItem = {
 
 export const projects: WorkItem[] = [
   {
+    title: 'Orin',
+    year: '2026',
+    status: 'in progress',
+    description:
+      'A Lovable-style AI app builder — you describe an app and an agent scaffolds and builds it live. A provider-agnostic agent loop drives tool calls inside per-session E2B sandboxes, streaming events and a live preview to the browser over SSE.',
+    stack: ['TypeScript', 'Bun', 'DeepSeek', 'E2B', 'SSE', 'React', 'Turborepo'],
+    code: 'https://github.com/ashutoshsao/orin',
+  },
+  {
     title: 'Nebula',
     year: '2026',
     status: 'live in production',
@@ -28,15 +37,6 @@ export const projects: WorkItem[] = [
     stack: ['TypeScript', 'Bun', 'Redis Streams', 'WebSockets', 'PostgreSQL', 'TimescaleDB', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/nebula',
     live: 'https://nebula.ashutoshsao.com/trade/BTC-PERP',
-  },
-  {
-    title: 'Plum',
-    year: '2026',
-    status: 'in progress',
-    description:
-      'An AI agent harness built from first principles — planning, tool orchestration, and context and memory that hold up across a session.',
-    stack: ['TypeScript', 'Bun', 'Tool Calling', 'Context Management'],
-    code: 'https://github.com/ashutoshsao/plum',
   },
 ]
 
