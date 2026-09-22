@@ -1,5 +1,5 @@
 # Resume Information Repository
-# Last Updated: 2026-08-25
+# Last Updated: 2026-09-22
 # This file contains VERIFIED information from GitHub and actual contributions
 
 personal_info:
@@ -16,6 +16,7 @@ summary:
   # TODO: Customize this summary based on the job you're applying for
   - "Software engineer in residence at Super30 (100xSchool), building production-grade systems full-time"
   - "Built and deployed Nebula, a perpetual-futures exchange (matching engine, Redis Streams, WebSockets, Kubernetes), live in production"
+  - "Built and deployed Orin, an AI app builder that writes and runs apps in cloud sandboxes with crash-safe resume/rewind, live in production"
   - "Contributed 26+ merged PRs to major open-source projects including Talawa (16 PRs) and stdlib-js (8 PRs)"
 
 skills:
@@ -37,13 +38,19 @@ skills:
     - "DOM Manipulation"
   
   backend:
+    - "Bun (runtime, Bun.S3Client, Bun.RedisClient)"
     - "Node.js (npm, nvm)"
+    - "Elysia (Bun-native HTTP, SSE via generator handlers)"
     - "Express (Middlewares, Routes, Error Handling)"
+    - "Server-Sent Events (SSE) and WebSockets"
+    - "Redis (Streams as a command bus, pub/sub fan-out)"
     - "GraphQL"
     - "REST APIs"
     - "AWS Lambda (Serverless)"
     - "Prisma ORM"
+    - "Drizzle ORM"
     - "Mongoose (MongoDB ODM)"
+    - "Better Auth (self-hosted, GitHub OAuth, cookie auth incl. cross-origin SSE)"
     - "NextAuth.js (OAuth: Google, GitHub + Email/Password + Cookies)"
   
   databases:
@@ -51,11 +58,17 @@ skills:
     - "MongoDB (Mongoose, Relationships, Transactions)"
     - "MySQL"
     - "Database Connection Pooling"
-    - "ORM/ODM (Prisma, Mongoose)"
+    - "ORM/ODM (Prisma, Drizzle, Mongoose)"
+    - "TimescaleDB (time-series on PostgreSQL)"
   
   tools_and_platforms:
     - "Git/GitHub"
     - "Docker & Docker Compose"
+    - "Kubernetes / GKE (ingress-nginx, cert-manager for TLS)"
+    - "Cloudflare R2 (S3-compatible object storage)"
+    - "E2B (isolated cloud sandboxes, custom templates)"
+    - "Turborepo (monorepos)"
+    - "Vercel"
     - "AWS (Lambda, EC2)"
     - "CI/CD (GitHub Actions + AWS EC2 deployment scripts)"
     - "Linux (Arch Linux, Ubuntu)"
@@ -66,6 +79,8 @@ skills:
   
   other:
     - "Test-Driven Development (TDD)"
+    - "LLM agent loops (provider-agnostic tool-calling, OpenAI-compatible + Claude Messages API)"
+    - "Crash-safe state (snapshot/replay recovery, deterministic restart)"
     - "Code Review"
     - "Technical Documentation"
     - "ESLint/Code Quality Tools"
@@ -278,6 +293,18 @@ open_source_contributions:
 
 # Personal Projects (VERIFIED from GitHub)
 projects:
+  - name: "Orin"
+    description: "An AI app builder: users describe an app, an agent writes and runs it in a cloud sandbox, and a live preview streams back over SSE."
+    repository: "https://github.com/ashutoshsao/orin"
+    live_url: "https://orin.ashutoshsao.com"
+    technologies: ["TypeScript", "Bun", "Elysia", "React", "Vite", "PostgreSQL", "Drizzle", "Redis", "E2B", "Cloudflare R2", "Kubernetes (GKE)"]
+    highlights:
+      - "Agent loop built on a provider-agnostic LLM interface, with adapters for OpenAI-compatible APIs (DeepSeek, Gemini) and Claude's Messages API"
+      - "Per-round git snapshots pushed to Cloudflare R2 off the hot path, so a dropped connection or dead sandbox resumes — or rewinds to any earlier step"
+      - "Invite, guest-link and bring-your-own-key tiers with atomically-enforced step budgets"
+      - "Deployed to GKE with nightly backups verified by restore"
+    status: "Live in production"
+
   - name: "Nebula"
     description: "A perpetual-futures exchange built from scratch: a single in-memory matching engine, Redis Streams as the command bus between API and engine, real-time order book/price feeds over WebSockets, and deterministic snapshot/replay recovery to Cloudflare R2."
     repository: "https://github.com/ashutoshsao/nebula"
@@ -427,7 +454,7 @@ residencies:
     start_date: "2026"
     end_date: "Present"
     description: "Living on-campus at 100xdevs' six-month post-grad hackerhouse, building production-grade systems full-time alongside other residents."
-    notable_work: "Built Nebula (see projects) from scratch through to production deployment during the residency"
+    notable_work: "Built Nebula and Orin (see projects) from scratch through to production Kubernetes deployments during the residency"
     link: "https://100xschool.in/post-grad"
 
 # Work Experience

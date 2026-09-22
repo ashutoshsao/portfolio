@@ -22,11 +22,12 @@ export const projects: WorkItem[] = [
   {
     title: 'Orin',
     year: '2026',
-    status: 'in progress',
+    status: 'live in production',
     description:
-      'A Lovable-style AI app builder — you describe an app and an agent scaffolds and builds it live. A provider-agnostic agent loop drives tool calls inside per-session E2B sandboxes, streaming events and a live preview to the browser over SSE.',
-    stack: ['TypeScript', 'Bun', 'DeepSeek', 'E2B', 'SSE', 'React', 'Turborepo'],
+      'An AI app builder — you describe an app and an agent writes and runs it in a cloud sandbox, streaming a live preview back over SSE. The agent loop sits behind a provider-agnostic LLM interface, and every round is snapshotted to R2 as a git commit, so a dropped connection or a dead sandbox resumes — or rewinds to any earlier step. Runs on GKE with invite, guest-link and bring-your-own-key tiers under atomically-enforced step budgets.',
+    stack: ['TypeScript', 'Bun', 'Elysia', 'PostgreSQL', 'Drizzle', 'Redis', 'E2B', 'Cloudflare R2', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/orin',
+    live: 'https://orin.ashutoshsao.com',
   },
   {
     title: 'Nebula',
@@ -54,13 +55,13 @@ export const experience: Experience[] = [
     role: 'resident',
     period: '2026 — present',
     description:
-      'Living on campus at 100xSchool’s six-month post-grad program in Noida, building production-grade systems full time.',
+      'Living on campus at 100xSchool’s six-month post-grad program in Noida, building production-grade systems full time — Nebula and Orin both shipped from here to a production Kubernetes deployment, on weekly build cycles with peer code review and system-design critique.',
     link: { label: '100xschool ↗', href: 'https://100xschool.in/post-grad' },
   },
   {
     org: 'Palisadoes Foundation',
     role: 'open-source contributor & maintainer',
-    period: '2025 — present',
+    period: '2025 — 2026',
     description:
       '16 merged PRs on Talawa, an open-source platform used by real communities — features shipped end to end, from API to UI.',
     link: {
