@@ -35,8 +35,10 @@ export default function Home() {
           <p>
             I&apos;m Ashutosh, a software engineer from {site.location}. I
             care how a system is designed, how it scales, and how it behaves
-            when things go wrong — right now, a real-time trading exchange and
-            AI agents that get real work done.
+            when things go wrong — a perpetual-futures exchange that replays
+            itself back from a snapshot, and an AI app builder that resumes a
+            half-finished build after the sandbox dies. Both live in
+            production.
           </p>
         </div>
       </section>
