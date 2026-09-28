@@ -24,7 +24,7 @@ export const projects: WorkItem[] = [
     year: '2026',
     status: 'live in production',
     description:
-      'An AI app builder — you describe an app and an agent writes and runs it in a cloud sandbox, streaming a live preview back over SSE. The agent loop sits behind a provider-agnostic LLM interface, and every round is snapshotted to R2 as a git commit, so a dropped connection or a dead sandbox resumes — or rewinds to any earlier step. Runs on GKE with invite, guest-link and bring-your-own-key tiers under atomically-enforced step budgets.',
+      'An AI app builder — an agent writes and runs your app in a cloud sandbox, streaming a live preview over SSE, with every step snapshotted to R2 so a dead sandbox resumes or rewinds, deployed on GKE.',
     stack: ['TypeScript', 'Bun', 'Elysia', 'PostgreSQL', 'Drizzle', 'Redis', 'E2B', 'Cloudflare R2', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/orin',
     live: 'https://orin.ashutoshsao.com',
