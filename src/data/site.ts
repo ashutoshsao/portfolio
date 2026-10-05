@@ -24,7 +24,7 @@ export const projects: WorkItem[] = [
     year: '2026',
     status: 'live in production',
     description:
-      'An AI app builder — an agent writes and runs your app in a cloud sandbox, streaming a live preview over SSE, with every step snapshotted to R2 so a dead sandbox resumes or rewinds, deployed on GKE.',
+      'An AI app builder — an agent writes and runs your app in a cloud sandbox, streaming a live preview over SSE, with every step snapshotted to R2 so a dead sandbox resumes or rewinds (181 restorable checkpoints across 19 user-built apps), deployed on GKE.',
     stack: ['TypeScript', 'Bun', 'Elysia', 'PostgreSQL', 'Drizzle', 'Redis', 'E2B', 'Cloudflare R2', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/orin',
     live: 'https://orin.ashutoshsao.com',
@@ -34,7 +34,7 @@ export const projects: WorkItem[] = [
     year: '2026',
     status: 'live in production',
     description:
-      'A perpetual-futures exchange built from scratch — single in-memory matching engine, real-time order book and price feeds over WebSockets, and deterministic snapshot/replay recovery, deployed on GKE.',
+      'A perpetual-futures exchange built from scratch — single-writer in-memory matching engine benchmarked at 200k+ orders/sec (p99 under 40µs over 1M orders), real-time order book over WebSockets, and deterministic snapshot/replay recovery, deployed on GKE.',
     stack: ['TypeScript', 'Bun', 'Redis Streams', 'WebSockets', 'PostgreSQL', 'TimescaleDB', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/nebula',
     live: 'https://nebula.ashutoshsao.com/trade/BTC-PERP',
@@ -51,6 +51,13 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
+    org: 'Stealth Startup',
+    role: 'software engineer (contract)',
+    period: '2026 — present',
+    description:
+      'Hardening a live, paid video-consultation app (React Native, Firebase, VideoSDK) — shipped 16 call-safety fixes, including a video-stream leak (~1,800 native streams per 15-min call → 1 per track), and moving call billing server-side with idempotent call start, credit holds, and a race-free booking lock.',
+  },
+  {
     org: 'Super30 — 100xSchool',
     role: 'resident',
     period: '2026 — present',
@@ -60,10 +67,10 @@ export const experience: Experience[] = [
   },
   {
     org: 'Palisadoes Foundation',
-    role: 'open-source contributor & maintainer',
+    role: 'open-source contributor',
     period: '2025 — 2026',
     description:
-      '16 merged PRs on Talawa, an open-source platform used by real communities — features shipped end to end, from API to UI.',
+      '16 merged PRs on Talawa, an open-source platform used by real communities — features shipped end to end, from GraphQL APIs to the React admin UI, with Vitest coverage.',
     link: {
       label: '16 merged prs ↗',
       href: 'https://github.com/search?q=author%3Aashutoshsao+org%3APalisadoesFoundation+type%3Apr+is%3Amerged&type=pullrequests',
