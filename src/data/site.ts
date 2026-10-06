@@ -34,7 +34,7 @@ export const projects: WorkItem[] = [
     year: '2026',
     status: 'live in production',
     description:
-      'A perpetual-futures exchange built from scratch — single-writer in-memory matching engine benchmarked at 200k+ orders/sec (p99 under 40µs over 1M orders), real-time order book over WebSockets, and deterministic snapshot/replay recovery, deployed on GKE.',
+      'A perpetual-futures exchange built from scratch — single-writer in-memory matching engine benchmarked at ~200k orders/sec (p99 ~40µs over 1M orders), real-time order book over WebSockets, and deterministic snapshot/replay recovery, deployed on GKE.',
     stack: ['TypeScript', 'Bun', 'Redis Streams', 'WebSockets', 'PostgreSQL', 'TimescaleDB', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/nebula',
     live: 'https://nebula.ashutoshsao.com/trade/BTC-PERP',
