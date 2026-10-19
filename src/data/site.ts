@@ -7,6 +7,8 @@ export const site = {
   github: 'https://github.com/ashutoshsao',
   twitter: 'https://x.com/ashutosh_sao',
   linkedin: 'https://www.linkedin.com/in/ashutoshsao/',
+  // Public copy of ~/personal/resume.tex without the phone number
+  resume: '/ashutosh-sao-resume.pdf',
 }
 
 export type Proof = {

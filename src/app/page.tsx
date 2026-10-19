@@ -12,9 +12,9 @@ export default function Home() {
     <main className="mx-auto flex min-h-screen w-full max-w-[792px] flex-col gap-20 px-4 py-14 sm:px-6 sm:py-24">
       <Reveal />
 
-      <header className="flex items-center justify-between gap-x-6 gap-y-2" data-reveal>
-        <span className="kicker">{site.name}</span>
-        <nav className="flex items-center gap-x-4 font-mono text-[14px]">
+      <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 sm:gap-x-6" data-reveal>
+        <span className="kicker whitespace-nowrap">{site.name}</span>
+        <nav className="flex items-center gap-x-3 font-mono text-[14px] sm:gap-x-4">
           <a href={site.github} target="_blank" rel="noopener noreferrer" className="link py-1">
             github
           </a>
@@ -23,6 +23,9 @@ export default function Home() {
           </a>
           <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="link py-1">
             linkedin
+          </a>
+          <a href={site.resume} target="_blank" rel="noopener noreferrer" className="link py-1">
+            resume
           </a>
           <ThemeToggle />
         </nav>
