@@ -56,7 +56,7 @@ export const projects: WorkItem[] = [
     code: 'https://github.com/ashutoshsao/nebula',
     live: 'https://nebula.ashutoshsao.com/trade/BTC-PERP',
     image: {
-      light: '/work/nebula-light.webp',
+      light: '/work/nebula-light-v2.webp',
       dark: '/work/nebula-dark.webp',
       alt: 'Nebula BTC-PERP trading screen with chart, order book and order form',
     },
