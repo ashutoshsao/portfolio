@@ -1,20 +1,24 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+// The icon's rotation is driven by CSS off `data-theme`, so this button keeps
+// no React state and never renders a placeholder before hydration.
+
+function apply(next: 'light' | 'dark') {
+  document.documentElement.dataset.theme = next
+  try {
+    localStorage.setItem('theme', next)
+  } catch {}
+}
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<'light' | 'dark' | null>(null)
-
-  useEffect(() => {
-    const current = document.documentElement.dataset.theme
-    setTheme(current === 'dark' ? 'dark' : 'light')
-  }, [])
-
   const toggle = () => {
-    const next = theme === 'dark' ? 'light' : 'dark'
-    document.documentElement.dataset.theme = next
-    localStorage.setItem('theme', next)
-    setTheme(next)
+    const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!document.startViewTransition || reduced) {
+      apply(next)
+      return
+    }
+    document.startViewTransition(() => apply(next))
   }
 
   return (
@@ -22,9 +26,13 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="Toggle color theme"
-      className="kicker cursor-pointer rounded-sm px-1 py-0.5 transition-colors hover:text-[var(--accent)] focus-visible:outline focus-visible:outline-1 focus-visible:outline-[var(--accent)]"
+      title="Toggle color theme"
+      className="press -m-1.5 grid size-8 cursor-pointer place-items-center rounded-full text-[var(--faint)] transition-colors duration-150 hover:text-[var(--ink)]"
     >
-      {theme === null ? '    ' : theme === 'dark' ? 'light' : 'dark'}
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden className="theme-icon">
+        <circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor" />
+      </svg>
     </button>
   )
 }

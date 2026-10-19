@@ -6,29 +6,40 @@
   color-scheme: light;
   --bg: #fcfcfa;
   --ink: #1a1a1f;
-  --muted: #6d6d76;
-  --faint: #9e9ea6;
+  --muted: #5f5f68;
+  --faint: #8e8e96;
   --line: #e6e6e1;
+  --line-strong: #d3d3cc;
   --accent: #2240c8;
   --accent-soft: #eef1fc;
   --surface: #ffffff;
+  --frame-shadow: 0 1px 2px rgb(20 20 30 / 0.04), 0 8px 24px -12px rgb(20 20 30 / 0.12);
+  --frame-shadow-hover: 0 1px 2px rgb(20 20 30 / 0.05), 0 18px 40px -16px rgb(20 20 30 / 0.22);
+  --live: #1f9d55;
   --graph-0: #ededea;
   --graph-1: #c3cdf0;
   --graph-2: #8b9de4;
   --graph-3: #4f68d6;
   --graph-4: #2240c8;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-reveal: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
   --bg: #111113;
   --ink: #e8e8e4;
-  --muted: #9b9ba3;
-  --faint: #66666e;
+  --muted: #a3a3ab;
+  --faint: #74747c;
   --line: #262629;
+  --line-strong: #36363b;
   --accent: #93a5f5;
   --accent-soft: #1b2138;
   --surface: #17171a;
+  --frame-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px -12px rgb(0 0 0 / 0.5);
+  --frame-shadow-hover: 0 1px 2px rgb(0 0 0 / 0.3), 0 18px 40px -16px rgb(0 0 0 / 0.7);
+  --live: #5fd38d;
   --graph-0: #202024;
   --graph-1: #2c3860;
   --graph-2: #43549b;
@@ -39,26 +50,21 @@
 @theme inline {
   --color-bg: var(--bg);
   --color-ink: var(--ink);
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   --font-serif: var(--font-newsreader), Georgia, "Times New Roman", serif;
   --font-mono: var(--font-geist-mono), "SF Mono", ui-monospace, Menlo, monospace;
 }
 
 /* ── base ──────────────────────────────────────────────────── */
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 16.5px;
-  line-height: 1.75;
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 200ms ease, color 200ms ease;
 }
 
 ::selection {
@@ -68,6 +74,12 @@ body {
 
 a {
   text-underline-offset: 4px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
 /* ── type helpers ──────────────────────────────────────────── */
@@ -98,17 +110,199 @@ a {
   text-decoration-color: var(--accent);
 }
 
-.quiet-link {
-  color: var(--ink);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-decoration-color: var(--line);
-  transition: color 150ms ease, text-decoration-color 150ms ease;
+/* ── interaction ───────────────────────────────────────────── */
+
+.press {
+  transition-property: transform, color;
+  transition-duration: 150ms;
+  transition-timing-function: var(--ease-out);
 }
 
-.quiet-link:hover {
-  color: var(--accent);
-  text-decoration-color: var(--accent);
+.press:active {
+  transform: scale(0.97);
+}
+
+.swap-in {
+  display: inline-block;
+  animation: swap-in 180ms var(--ease-out);
+}
+
+@keyframes swap-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+.theme-icon {
+  transition: transform 400ms var(--ease-out);
+}
+
+:root[data-theme="dark"] .theme-icon {
+  transform: rotate(180deg);
+}
+
+.live-dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--live);
+}
+
+.live-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--live);
+  animation: live-ping 2.4s var(--ease-out) infinite;
+}
+
+@keyframes live-ping {
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(2.6);
+  }
+}
+
+/* ── project frames ────────────────────────────────────────── */
+
+.frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--frame-shadow);
+  transition:
+    transform 220ms var(--ease-out),
+    box-shadow 220ms var(--ease-out),
+    border-color 220ms var(--ease-out);
+}
+
+.frame-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 500ms var(--ease-out);
+}
+
+.frame-chip {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 3px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(8px);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 150ms var(--ease-out),
+    transform 150ms var(--ease-out);
+}
+
+.frame:focus-visible .frame-chip {
+  opacity: 1;
+  transform: none;
+}
+
+.frame:active {
+  transform: scale(0.995);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .frame:hover {
+    transform: translateY(-2px);
+    border-color: var(--line-strong);
+    box-shadow: var(--frame-shadow-hover);
+  }
+
+  .frame:hover .frame-img {
+    transform: scale(1.012);
+  }
+
+  .frame:hover .frame-chip {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.only-dark {
+  display: none;
+}
+
+:root[data-theme="dark"] .only-light:has(+ .only-dark) {
+  display: none;
+}
+
+:root[data-theme="dark"] .only-dark {
+  display: block;
+}
+
+/* ── reveal on scroll ──────────────────────────────────────── */
+
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(8px);
+  filter: blur(4px);
+  transition:
+    opacity 600ms var(--ease-reveal),
+    transform 600ms var(--ease-reveal),
+    filter 600ms var(--ease-reveal);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js-reveal [data-reveal][data-shown] {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* theme switch: a short crossfade instead of a hard cut */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal [data-reveal] {
+    transform: none;
+    filter: none;
+    transition: opacity 200ms ease;
+  }
+
+  .frame,
+  .frame-img,
+  .press,
+  .theme-icon {
+    transition: none;
+  }
+
+  .frame:hover,
+  .frame:hover .frame-img,
+  .press:active {
+    transform: none;
+  }
+
+  .swap-in,
+  .live-dot::after {
+    animation: none;
+  }
 }
 
 /* ── activity calendar tooltip ─────────────────────────────── */

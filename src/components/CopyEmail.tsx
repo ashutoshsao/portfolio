@@ -25,9 +25,14 @@ export default function CopyEmail({ label }: { label?: string }) {
       onClick={copy}
       aria-label={`Copy email address ${site.email}`}
       title={site.email}
-      className="link cursor-pointer font-mono text-[14px]"
+      className="link press cursor-pointer py-1 font-mono text-[14px]"
     >
-      {copied ? 'copied ✓' : (label ?? site.email)}
+      <span key={copied ? 'copied' : 'idle'} className="swap-in">
+        {copied ? 'copied ✓' : (label ?? site.email)}
+      </span>
+      <span className="sr-only" aria-live="polite">
+        {copied ? 'Email copied' : ''}
+      </span>
     </button>
   )
 }
