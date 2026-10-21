@@ -8,7 +8,7 @@ export default function Section({
   children: React.ReactNode
 }) {
   return (
-    <section className="grid gap-7">
+    <section id={label.toLowerCase()} className="grid scroll-mt-16 gap-7">
       <div className="flex items-baseline gap-3" data-reveal>
         <span className="kicker" style={{ color: 'var(--accent)' }}>
           {index}

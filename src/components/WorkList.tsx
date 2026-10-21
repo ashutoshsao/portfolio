@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Logo from '@/components/Logo'
 import type { Proof, WorkItem } from '@/data/site'
 
 const host = (url: string) => new URL(url).host
@@ -67,21 +68,17 @@ function Featured({ item }: { item: WorkItem }) {
       <div className="grid gap-3 pt-1">
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <h3 className="text-[19px] font-semibold tracking-[-0.01em] text-[var(--ink)]">
+            <Logo name={item.title} />
             {item.title}
           </h3>
-          {item.status && (
-            <span className="serif text-[17px] italic text-[var(--accent)]">{item.status}</span>
-          )}
+          <Links item={item} />
           <span className="ml-auto font-mono text-[13px] text-[var(--faint)]">{item.year}</span>
         </div>
         <ProofLine proof={item.proof} />
         <p className="max-w-[64ch] text-[16px] leading-[1.7] text-[var(--muted)] text-pretty">
           {item.description}
         </p>
-        <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-          <span className="font-mono text-[12.5px] text-[var(--faint)]">{item.stack.join(' · ')}</span>
-          <Links item={item} />
-        </div>
+        <p className="font-mono text-[12.5px] text-[var(--faint)]">{item.stack.join(' · ')}</p>
       </div>
     </article>
   )

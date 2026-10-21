@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react'
 import { site } from '@/data/site'
 
-export default function CopyEmail({ label }: { label?: string }) {
+export default function CopyEmail({ label, className = 'link' }: { label?: string; className?: string }) {
   const [copied, setCopied] = useState(false)
   const timer = useRef<number | undefined>(undefined)
 
@@ -25,7 +25,7 @@ export default function CopyEmail({ label }: { label?: string }) {
       onClick={copy}
       aria-label={`Copy email address ${site.email}`}
       title={site.email}
-      className="link press cursor-pointer py-1 font-mono text-[14px]"
+      className={`${className} press cursor-pointer py-1 font-mono text-[14px]`}
     >
       <span key={copied ? 'copied' : 'idle'} className="swap-in">
         {copied ? 'copied ✓' : (label ?? site.email)}

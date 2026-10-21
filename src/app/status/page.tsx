@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import Signature from '@/components/Signature'
 import ThemeToggle from '@/components/ThemeToggle'
-import { site, status } from '@/data/site'
+import { status } from '@/data/site'
 
 export const metadata: Metadata = {
   title: 'Status — Ashutosh Sao',
@@ -100,8 +101,8 @@ export default async function StatusPage() {
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-[792px] flex-col gap-14 px-4 py-14 sm:px-6 sm:py-24">
       <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 sm:gap-x-6">
-        <Link href="/" className="kicker whitespace-nowrap hover:text-[var(--ink)]">
-          {site.name}
+        <Link href="/" className="text-[var(--ink)]">
+          <Signature width={92} />
         </Link>
         <nav className="flex items-center gap-x-3 font-mono text-[14px] sm:gap-x-4">
           <a href={status.upptime} target="_blank" rel="noopener noreferrer" className="link py-1">

@@ -19,7 +19,6 @@ export type Proof = {
 export type WorkItem = {
   title: string
   year: string
-  status?: string
   description: string
   proof: Proof
   stack: string[]
@@ -32,7 +31,6 @@ export const projects: WorkItem[] = [
   {
     title: 'Orin',
     year: '2026',
-    status: 'live in production',
     description:
       'An AI app builder — an agent writes and runs your app in a cloud sandbox, streaming a live preview over SSE. Every round is snapshotted to R2 off the hot path, so a dropped connection or dead sandbox resumes or rewinds to any earlier step.',
     proof: { value: '181', label: 'restorable checkpoints across 19 user-built apps' },
@@ -48,7 +46,6 @@ export const projects: WorkItem[] = [
   {
     title: 'Nebula',
     year: '2026',
-    status: 'live in production',
     description:
       'A perpetual-futures exchange built from scratch — a single-writer in-memory matching engine fed by Redis Streams, with margin, liquidation, funding and snapshot/replay recovery. Profiling traced a 30× throughput loss to filled orders never leaving the book; fixed with regression tests.',
     proof: { value: '~200k', label: 'orders/sec · p99 ~40µs over 1M orders' },
@@ -64,7 +61,6 @@ export const projects: WorkItem[] = [
   {
     title: 'Ardin',
     year: '2026',
-    status: 'live',
     description:
       'AI triage for trading-firm ops — reads live exchange and vendor feeds, asks a decision model typed questions for every notice × system, and opens tickets only for the desks whose systems are hit. Unsure calls go to human review.',
     proof: { value: '27/28', label: 'hand-labelled notices routed right · 5/5 prompt injections held' },
@@ -79,7 +75,6 @@ export const projects: WorkItem[] = [
   {
     title: 'Proxy',
     year: '2026',
-    status: 'live',
     description:
       'Agents that date for you. Built in under three hours: a multi-agent pipeline reads public LinkedIn and Instagram into a profile where every claim is quote-checked against its source, then agents go on ten-turn dates for their people and rank who fits.',
     proof: { value: '67/68', label: 'claims verified against the source · 25 people, 90 dates' },

@@ -1,8 +1,11 @@
+import Link from 'next/link'
 import Activity from '@/components/Activity'
 import CopyEmail from '@/components/CopyEmail'
 import Footer from '@/components/Footer'
+import Logo from '@/components/Logo'
 import Reveal from '@/components/Reveal'
 import Section from '@/components/Section'
+import Signature from '@/components/Signature'
 import ThemeToggle from '@/components/ThemeToggle'
 import WorkList from '@/components/WorkList'
 import { experience, moreProjects, projects, recognition, site } from '@/data/site'
@@ -13,7 +16,9 @@ export default function Home() {
       <Reveal />
 
       <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 sm:gap-x-6" data-reveal>
-        <span className="kicker whitespace-nowrap">{site.name}</span>
+        <Link href="/" className="text-[var(--ink)]">
+          <Signature width={92} />
+        </Link>
         <nav className="flex items-center gap-x-3 font-mono text-[14px] sm:gap-x-4">
           <a href={site.github} target="_blank" rel="noopener noreferrer" className="link py-1">
             github
@@ -72,6 +77,7 @@ export default function Home() {
             <article key={item.org} className="grid gap-2.5" data-reveal>
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h3 className="text-[17px] font-semibold tracking-[-0.01em] text-[var(--ink)]">
+                  <Logo name={item.org} />
                   {item.org}
                 </h3>
                 <span className="serif text-[17px] italic text-[var(--accent)]">
@@ -108,7 +114,10 @@ export default function Home() {
               data-reveal
               style={{ '--reveal-delay': `${i * 70}ms` } as React.CSSProperties}
             >
-              <dt className="order-2 text-[15px] font-semibold text-[var(--ink)]">{item.label}</dt>
+              <dt className="order-2 text-[15px] font-semibold text-[var(--ink)]">
+                <Logo name={item.label} />
+                {item.label}
+              </dt>
               <dd className="order-1 font-mono text-[24px] font-medium leading-tight tracking-[-0.02em] text-[var(--ink)]">
                 {item.value}
               </dd>
