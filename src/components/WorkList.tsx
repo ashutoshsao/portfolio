@@ -26,12 +26,12 @@ function Links({ item }: { item: WorkItem }) {
     <span className="flex gap-3 font-mono text-[13.5px]">
       {item.live && (
         <a href={item.live} target="_blank" rel="noopener noreferrer" className="link">
-          live ↗
+          live
         </a>
       )}
       {item.code && (
         <a href={item.code} target="_blank" rel="noopener noreferrer" className="link">
-          code ↗
+          code
         </a>
       )}
     </span>
@@ -56,7 +56,7 @@ function Frame({ item }: { item: WorkItem }) {
       {dark !== light && (
         <Image src={dark} alt={alt} width={1600} height={900} sizes={sizes} className="frame-img only-dark" />
       )}
-      {href && <span className="frame-chip">{host(href)} ↗</span>}
+      {href && <span className="frame-chip">{host(href)}</span>}
     </a>
   )
 }

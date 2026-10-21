@@ -115,7 +115,7 @@ export const experience: Experience[] = [
     role: 'software engineer (contract)',
     period: '2026 - present',
     description:
-      'Hardening a live, paid video-consultation app (React Native, Firebase, VideoSDK) - shipped 16 call-safety fixes, including a video-stream leak (~1,800 native streams per 15-min call → 1 per track), and moving call billing server-side with idempotent call start, credit holds, and a race-free booking lock.',
+      'Hardening a live, paid video-consultation app (React Native, Firebase, VideoSDK) - shipped 16 call-safety fixes, including a video-stream leak (~1,800 native streams per 15-min call down to 1 per track), and moving call billing server-side with idempotent call start, credit holds, and a race-free booking lock.',
   },
   {
     org: 'Super30 - 100xSchool',
@@ -123,7 +123,7 @@ export const experience: Experience[] = [
     period: '2026 - present',
     description:
       'A selective, full-time post-grad engineering residency in Noida - Nebula and Orin both shipped from here to production Kubernetes, on weekly deadlines with peer code review and system-design critique.',
-    link: { label: '100xschool ↗', href: 'https://100xschool.in/post-grad' },
+    link: { label: '100xschool', href: 'https://100xschool.in/post-grad' },
   },
   {
     org: 'Palisadoes Foundation',
@@ -132,7 +132,7 @@ export const experience: Experience[] = [
     description:
       '16 merged PRs on Talawa, an open-source platform used by real communities - features shipped end to end, from GraphQL APIs to the React admin UI, with Vitest coverage.',
     link: {
-      label: '16 merged prs ↗',
+      label: '16 merged prs',
       href: 'https://github.com/search?q=author%3Aashutoshsao+org%3APalisadoesFoundation+type%3Apr+is%3Amerged&type=pullrequests',
     },
   },
