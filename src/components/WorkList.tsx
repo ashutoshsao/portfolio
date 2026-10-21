@@ -26,12 +26,12 @@ function Links({ item }: { item: WorkItem }) {
     <span className="flex gap-3 font-mono text-[13.5px]">
       {item.live && (
         <a href={item.live} target="_blank" rel="noopener noreferrer" className="link">
-          live
+          live ↗
         </a>
       )}
       {item.code && (
         <a href={item.code} target="_blank" rel="noopener noreferrer" className="link">
-          code
+          code ↗
         </a>
       )}
     </span>
