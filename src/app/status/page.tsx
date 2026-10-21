@@ -49,6 +49,26 @@ function history(s: Site, dates: string[]): Day[] {
   return dates.map((date) => ({ date, down: date < since ? null : (s.dailyMinutesDown[date] ?? 0) }))
 }
 
+// One row per project: "Nebula", "Nebula API" and "Nebula WebSocket" are one project (the name's first word),
+// so a new check joins its project with no config. A project's day is its worst service's day.
+type Project = { name: string; sites: Site[] }
+
+function projects(sites: Site[]): Project[] {
+  const byName = new Map<string, Site[]>()
+  for (const s of sites) {
+    const name = s.name.split(' ')[0]
+    byName.set(name, [...(byName.get(name) ?? []), s])
+  }
+  return [...byName].map(([name, list]) => ({ name, sites: list }))
+}
+
+function worst(histories: Day[][]): Day[] {
+  return histories[0].map((d, i) => {
+    const watched = histories.map((h) => h[i].down).filter((v): v is number => v !== null)
+    return { date: d.date, down: watched.length ? Math.max(...watched) : null }
+  })
+}
+
 function uptime(days: Day[]): string | null {
   const watched = days.filter((d) => d.down !== null)
   if (!watched.length) return null
@@ -119,30 +139,28 @@ export default async function StatusPage() {
 
       {sites && (
         <section className="grid gap-9">
-          {sites.map((s) => {
-            const days = history(s, dates)
+          {projects(sites).map((p) => {
+            const histories = p.sites.map((s) => history(s, dates))
+            const trouble = p.sites.find((s) => s.status !== 'up')
+            const row = (
+              <Row
+                name={p.name}
+                caption={p.sites.length > 1 ? `${p.sites.length} services` : new URL(p.sites[0].url).host}
+                status={trouble?.status ?? 'up'}
+                days={worst(histories)}
+                expands={p.sites.length > 1}
+              />
+            )
+            if (p.sites.length === 1) return <article key={p.name}>{row}</article>
             return (
-              <article key={s.slug} className="grid gap-2.5">
-                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                  <h2 className="text-[16px] font-semibold tracking-[-0.01em] text-[var(--ink)]">{s.name}</h2>
-                  <span className="font-mono text-[12.5px] text-[var(--faint)]">{new URL(s.url).host}</span>
-                  <span
-                    className={`ml-auto font-mono text-[13px] ${s.status === 'up' ? 'text-[var(--muted)]' : 'text-[var(--down)]'}`}
-                  >
-                    {s.status === 'up' ? (uptime(days) ?? '—') : s.status}
-                  </span>
-                </div>
-                <ol className="bars" aria-label={`${s.name}, last ${status.days} days`}>
-                  {days.map((d, i) => (
-                    <li
-                      key={d.date}
-                      className={`bar ${tone(d.down)} ${i < status.days - MOBILE_DAYS ? 'max-sm:hidden' : ''}`}
-                      title={label(d)}
-                      aria-label={label(d)}
-                    />
+              <details key={p.name} className="project">
+                <summary>{row}</summary>
+                <div className="mt-5 grid gap-5 border-l border-[var(--line)] pl-4">
+                  {p.sites.map((s, i) => (
+                    <Row key={s.slug} name={s.name} caption={new URL(s.url).host} status={s.status} days={histories[i]} small />
                   ))}
-                </ol>
-              </article>
+                </div>
+              </details>
             )
           })}
           <div className="-mt-6 grid gap-3 font-mono text-[12px] text-[var(--faint)]">
@@ -173,5 +191,39 @@ export default async function StatusPage() {
 
       <Footer />
     </main>
+  )
+}
+
+function Row({ name, caption, status: state, days, small, expands }: {
+  name: string
+  caption: string
+  status: Site['status']
+  days: Day[]
+  small?: boolean
+  expands?: boolean
+}) {
+  return (
+    <div className="grid gap-2.5">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <h2 className={`${small ? 'text-[14.5px] font-medium' : 'text-[16px] font-semibold'} tracking-[-0.01em] text-[var(--ink)]`}>
+          {name}
+        </h2>
+        <span className="font-mono text-[12.5px] text-[var(--faint)]">{caption}</span>
+        {expands && <span aria-hidden className="chevron font-mono text-[12px] text-[var(--faint)]">▸</span>}
+        <span className={`ml-auto font-mono text-[13px] ${state === 'up' ? 'text-[var(--muted)]' : 'text-[var(--down)]'}`}>
+          {state === 'up' ? (uptime(days) ?? '—') : state}
+        </span>
+      </div>
+      <ol className={`bars ${small ? 'bars-small' : ''}`} aria-label={`${name}, last ${status.days} days`}>
+        {days.map((d, i) => (
+          <li
+            key={d.date}
+            className={`bar ${tone(d.down)} ${i < status.days - MOBILE_DAYS ? 'max-sm:hidden' : ''}`}
+            title={label(d)}
+            aria-label={label(d)}
+          />
+        ))}
+      </ol>
+    </div>
   )
 }

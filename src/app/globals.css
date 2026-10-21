@@ -185,6 +185,29 @@ a {
   height: 32px;
 }
 
+.bars-small {
+  height: 20px;
+}
+
+/* a project row expands to its services; the chevron is the only affordance */
+.project > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.project > summary::-webkit-details-marker {
+  display: none;
+}
+
+.chevron {
+  display: inline-block;
+  transition: transform 150ms var(--ease-out);
+}
+
+.project[open] .chevron {
+  transform: rotate(90deg);
+}
+
 .bar {
   flex: 1;
   min-width: 0;
@@ -353,6 +376,7 @@ a {
   .frame,
   .frame-img,
   .bar,
+  .chevron,
   .press,
   .theme-icon {
     transition: none;
