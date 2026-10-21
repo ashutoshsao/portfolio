@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import CopyEmail from '@/components/CopyEmail'
 import { site } from '@/data/site'
 
@@ -7,7 +8,12 @@ export default function Footer() {
       <p className="serif text-[16px] italic text-[var(--faint)]">
         {site.name} — {site.location}
       </p>
-      <CopyEmail />
+      <span className="flex items-baseline gap-4">
+        <Link href="/status" className="link font-mono text-[13.5px]">
+          status
+        </Link>
+        <CopyEmail />
+      </span>
     </footer>
   )
 }

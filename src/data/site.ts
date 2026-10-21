@@ -166,3 +166,13 @@ export const recognition: Recognition[] = [
     detail: '100xDevs × Superteam monthly Web3 contest',
   },
 ]
+
+// /status: Upptime (repo ashutoshsao/status) checks every app every 5 minutes and keeps the history.
+// One row per site in summary.json; days before `since` (or a site's own start) are drawn grey.
+export const status = {
+  summary: 'https://raw.githubusercontent.com/ashutoshsao/status/master/history/summary.json',
+  upptime: 'https://ashutoshsao.github.io/status/',
+  days: 90,
+  since: '2026-10-20',
+  sinceBySlug: {} as Record<string, string>, // e.g. a check added later: { 'ardin-api': '2026-10-25' }
+}
