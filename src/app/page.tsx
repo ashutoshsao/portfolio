@@ -41,7 +41,7 @@ export default function Home() {
           className="serif text-[2.3rem] font-normal leading-[1.2] tracking-[-0.015em] text-balance text-[var(--ink)] sm:text-[2.9rem]"
           data-reveal
         >
-          I build real-time systems and AI agents —{' '}
+          I build real-time systems and AI agents -{' '}
           <em className="pr-[0.04em] text-[var(--accent)]">software that earns trust</em>.
         </h1>
         <p
@@ -50,7 +50,7 @@ export default function Home() {
           style={{ '--reveal-delay': '80ms' } as React.CSSProperties}
         >
           I&apos;m Ashutosh, a software engineer from {site.location}. I care how a system is
-          designed, how it scales, and how it behaves when things go wrong — right now, a
+          designed, how it scales, and how it behaves when things go wrong - right now, a
           real-time trading exchange and AI agents that get real work done.
         </p>
         <p

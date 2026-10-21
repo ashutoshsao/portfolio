@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'Ashutosh Sao — software engineer building real-time systems and AI agents'
+export const alt = 'Ashutosh Sao - software engineer building real-time systems and AI agents'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -27,7 +27,7 @@ export default function OpengraphImage() {
       >
         <div style={{ fontSize: 22, letterSpacing: 5, color: '#8e8e96' }}>ASHUTOSH SAO</div>
         <div style={{ display: 'flex', flexDirection: 'column', fontSize: 64, lineHeight: 1.15 }}>
-          <span>I build real-time systems and AI agents —</span>
+          <span>I build real-time systems and AI agents -</span>
           <span style={{ color: '#2240c8', fontStyle: 'italic' }}>software that earns trust.</span>
         </div>
         <div style={{ display: 'flex', gap: 56 }}>

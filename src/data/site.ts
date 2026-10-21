@@ -32,7 +32,7 @@ export const projects: WorkItem[] = [
     title: 'Orin',
     year: '2026',
     description:
-      'An AI app builder — an agent writes and runs your app in a cloud sandbox, streaming a live preview over SSE. Every round is snapshotted to R2 off the hot path, so a dropped connection or dead sandbox resumes or rewinds to any earlier step.',
+      'An AI app builder - an agent writes and runs your app in a cloud sandbox, streaming a live preview over SSE. Every round is snapshotted to R2 off the hot path, so a dropped connection or dead sandbox resumes or rewinds to any earlier step.',
     proof: { value: '181', label: 'restorable checkpoints across 19 user-built apps' },
     stack: ['TypeScript', 'Bun', 'Elysia', 'PostgreSQL', 'Redis', 'E2B', 'Cloudflare R2', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/orin',
@@ -47,7 +47,7 @@ export const projects: WorkItem[] = [
     title: 'Nebula',
     year: '2026',
     description:
-      'A perpetual-futures exchange built from scratch — a single-writer in-memory matching engine fed by Redis Streams, with margin, liquidation, funding and snapshot/replay recovery. Profiling traced a 30× throughput loss to filled orders never leaving the book; fixed with regression tests.',
+      'A perpetual-futures exchange built from scratch - a single-writer in-memory matching engine fed by Redis Streams, with margin, liquidation, funding and snapshot/replay recovery. Profiling traced a 30× throughput loss to filled orders never leaving the book; fixed with regression tests.',
     proof: { value: '~200k', label: 'orders/sec · p99 ~40µs over 1M orders' },
     stack: ['TypeScript', 'Bun', 'Redis Streams', 'WebSockets', 'PostgreSQL', 'TimescaleDB', 'Kubernetes'],
     code: 'https://github.com/ashutoshsao/nebula',
@@ -62,7 +62,7 @@ export const projects: WorkItem[] = [
     title: 'Ardin',
     year: '2026',
     description:
-      'AI triage for trading-firm ops — reads live exchange and vendor feeds, asks a decision model typed questions for every notice × system, and opens tickets only for the desks whose systems are hit. Unsure calls go to human review.',
+      'AI triage for trading-firm ops - reads live exchange and vendor feeds, asks a decision model typed questions for every notice × system, and opens tickets only for the desks whose systems are hit. Unsure calls go to human review.',
     proof: { value: '27/28', label: 'hand-labelled notices routed right · 5/5 prompt injections held' },
     stack: ['TypeScript', 'Next.js', 'PostgreSQL', 'Prisma', 'Jev', 'DeepSeek', 'Playwright'],
     live: 'https://ardin.ashutoshsao.com',
@@ -94,7 +94,7 @@ export const moreProjects: WorkItem[] = [
     title: 'Care-Tip Feed',
     year: '2026',
     description:
-      'A safety-first health-video feed where an LLM runs only when a profile changes, so cost scales with changes, not users — checked by an eval with planted traps and a three-provider LLM-judge panel.',
+      'A safety-first health-video feed where an LLM runs only when a profile changes, so cost scales with changes, not users - checked by an eval with planted traps and a three-provider LLM-judge panel.',
     proof: { value: '0 vs 12', label: 'unsafe tips, against embedding-only' },
     stack: ['Python', 'Claude / Gemini / GPT', 'Ollama', 'pytest'],
     code: 'https://github.com/ashutoshsao/care-tip-feed',
@@ -113,24 +113,24 @@ export const experience: Experience[] = [
   {
     org: 'Stealth Startup',
     role: 'software engineer (contract)',
-    period: '2026 — present',
+    period: '2026 - present',
     description:
-      'Hardening a live, paid video-consultation app (React Native, Firebase, VideoSDK) — shipped 16 call-safety fixes, including a video-stream leak (~1,800 native streams per 15-min call → 1 per track), and moving call billing server-side with idempotent call start, credit holds, and a race-free booking lock.',
+      'Hardening a live, paid video-consultation app (React Native, Firebase, VideoSDK) - shipped 16 call-safety fixes, including a video-stream leak (~1,800 native streams per 15-min call → 1 per track), and moving call billing server-side with idempotent call start, credit holds, and a race-free booking lock.',
   },
   {
-    org: 'Super30 — 100xSchool',
+    org: 'Super30 - 100xSchool',
     role: 'resident',
-    period: '2026 — present',
+    period: '2026 - present',
     description:
-      'A selective, full-time post-grad engineering residency in Noida — Nebula and Orin both shipped from here to production Kubernetes, on weekly deadlines with peer code review and system-design critique.',
+      'A selective, full-time post-grad engineering residency in Noida - Nebula and Orin both shipped from here to production Kubernetes, on weekly deadlines with peer code review and system-design critique.',
     link: { label: '100xschool ↗', href: 'https://100xschool.in/post-grad' },
   },
   {
     org: 'Palisadoes Foundation',
     role: 'open-source contributor',
-    period: '2025 — 2026',
+    period: '2025 - 2026',
     description:
-      '16 merged PRs on Talawa, an open-source platform used by real communities — features shipped end to end, from GraphQL APIs to the React admin UI, with Vitest coverage.',
+      '16 merged PRs on Talawa, an open-source platform used by real communities - features shipped end to end, from GraphQL APIs to the React admin UI, with Vitest coverage.',
     link: {
       label: '16 merged prs ↗',
       href: 'https://github.com/search?q=author%3Aashutoshsao+org%3APalisadoesFoundation+type%3Apr+is%3Amerged&type=pullrequests',

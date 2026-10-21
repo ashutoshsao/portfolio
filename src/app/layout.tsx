@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 });
 
 const description =
-  "Software engineer building real-time systems and AI agents — a perpetual-futures exchange, an AI app builder, and AI triage with evals to prove it.";
+  "Software engineer building real-time systems and AI agents - a perpetual-futures exchange, an AI app builder, and AI triage with evals to prove it.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ashutoshsao.com"),

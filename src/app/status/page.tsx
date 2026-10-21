@@ -6,7 +6,7 @@ import ThemeToggle from '@/components/ThemeToggle'
 import { status } from '@/data/site'
 
 export const metadata: Metadata = {
-  title: 'Status — Ashutosh Sao',
+  title: 'Status - Ashutosh Sao',
   description: 'Uptime of my deployed apps over the last 90 days, checked every 5 minutes.',
 }
 
@@ -212,7 +212,7 @@ function Row({ name, caption, status: state, days, small, expands }: {
         <span className="font-mono text-[12.5px] text-[var(--faint)]">{caption}</span>
         {expands && <span aria-hidden className="chevron font-mono text-[12px] text-[var(--faint)]">▸</span>}
         <span className={`ml-auto font-mono text-[13px] ${state === 'up' ? 'text-[var(--muted)]' : 'text-[var(--down)]'}`}>
-          {state === 'up' ? (uptime(days) ?? '—') : state}
+          {state === 'up' ? (uptime(days) ?? '-') : state}
         </span>
       </div>
       <ol className={`bars ${small ? 'bars-small' : ''}`} aria-label={`${name}, last ${status.days} days`}>

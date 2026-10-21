@@ -10,7 +10,7 @@ const formatDay = (day: Day) => {
     day: 'numeric',
     year: 'numeric',
   }).format(new Date(`${day.date}T00:00:00`))
-  return `${day.count} contribution${day.count === 1 ? '' : 's'} — ${date}`
+  return `${day.count} contribution${day.count === 1 ? '' : 's'} - ${date}`
 }
 
 export default function Activity() {
