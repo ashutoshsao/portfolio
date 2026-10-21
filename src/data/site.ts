@@ -174,5 +174,5 @@ export const status = {
   upptime: 'https://ashutoshsao.github.io/status/',
   days: 90,
   since: '2026-10-20',
-  sinceBySlug: {} as Record<string, string>, // e.g. a check added later: { 'ardin-api': '2026-10-25' }
+  sinceBySlug: { 'ardin-api': '2026-10-21' } as Record<string, string>, // checks added after the start
 }
