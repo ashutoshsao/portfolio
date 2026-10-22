@@ -169,5 +169,16 @@ export const status = {
   upptime: 'https://ashutoshsao.github.io/status/',
   days: 90,
   since: '2026-10-20',
-  sinceBySlug: { 'ardin-api': '2026-10-21', 'nebula-workers': '2026-10-22' } as Record<string, string>, // checks added after the start
+  sinceBySlug: {
+    'ardin-api': '2026-10-21',
+    'nebula-workers': '2026-10-22',
+    tradio: '2026-10-21',
+    valor: '2026-10-22',
+  } as Record<string, string>, // checks added after the start
+  // Rows with no URL, from Healthchecks.io heartbeats (src/lib/heartbeats.ts). keyEnv names the server-side env
+  // var holding that project's read-only API key; slug is the check's slug in the project.
+  heartbeats: [
+    { name: 'Tradio', slug: 'tradio', caption: 'Telegram bot · heartbeat', keyEnv: 'HEALTHCHECKS_TRADIO_KEY' },
+    { name: 'Valor', slug: 'valor', caption: 'job-search agent · heartbeat', keyEnv: 'HEALTHCHECKS_VALOR_KEY' },
+  ],
 }

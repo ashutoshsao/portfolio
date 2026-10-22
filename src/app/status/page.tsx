@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import Signature from '@/components/Signature'
 import ThemeToggle from '@/components/ThemeToggle'
 import { status } from '@/data/site'
+import { heartbeats, type Site } from '@/lib/heartbeats'
 
 export const metadata: Metadata = {
   title: 'Status - Ashutosh Sao',
@@ -12,14 +13,6 @@ export const metadata: Metadata = {
 
 // Upptime rewrites summary.json only when a status changes, so 5 minutes is fresh enough.
 export const revalidate = 300
-
-type Site = {
-  name: string
-  slug: string
-  url: string
-  status: 'up' | 'down' | 'degraded'
-  dailyMinutesDown: Record<string, number>
-}
 
 type Day = { date: string; down: number | null } // null = not monitored yet
 
@@ -78,6 +71,10 @@ function uptime(days: Day[]): string | null {
   return `${pct >= 99.995 ? '100' : pct.toFixed(2)}%`
 }
 
+function caption(s: Site): string {
+  return s.caption ?? new URL(s.url).host
+}
+
 function tone(down: number | null): string {
   if (down === null) return 'bar-none'
   if (down === 0) return 'bar-up'
@@ -94,7 +91,8 @@ function label(d: Day): string {
 }
 
 export default async function StatusPage() {
-  const sites = await load()
+  const [checked, beats] = await Promise.all([load(), heartbeats()])
+  const sites = checked && [...checked, ...beats]
   const dates = lastDays(status.days)
   const down = sites?.filter((s) => s.status !== 'up') ?? []
 
@@ -134,7 +132,8 @@ export default async function StatusPage() {
         )}
         <p className="font-mono text-[13px] text-[var(--faint)]">
           Every app is checked every 5 minutes from GitHub Actions. API rows hit a deep /health that also checks
-          the database and Redis; Nebula's workers row checks that prices, orders and database writes are fresh.
+          the database and Redis; the Nebula workers row checks that prices, orders and database writes are fresh.
+          Tradio and Valor have no URL: they send a heartbeat every 5 minutes, watched by Healthchecks.io.
         </p>
       </section>
 
@@ -146,7 +145,7 @@ export default async function StatusPage() {
             const row = (
               <Row
                 name={p.name}
-                caption={p.sites.length > 1 ? `${p.sites.length} services` : new URL(p.sites[0].url).host}
+                caption={p.sites.length > 1 ? `${p.sites.length} services` : caption(p.sites[0])}
                 status={trouble?.status ?? 'up'}
                 days={worst(histories)}
                 expands={p.sites.length > 1}
@@ -158,7 +157,7 @@ export default async function StatusPage() {
                 <summary>{row}</summary>
                 <div className="mt-5 grid gap-5 border-l border-[var(--line)] pl-4">
                   {p.sites.map((s, i) => (
-                    <Row key={s.slug} name={s.name} caption={new URL(s.url).host} status={s.status} days={histories[i]} small />
+                    <Row key={s.slug} name={s.name} caption={caption(s)} status={s.status} days={histories[i]} small />
                   ))}
                 </div>
               </details>
