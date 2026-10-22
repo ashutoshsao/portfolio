@@ -39,8 +39,9 @@ export function minutesDown(flips: Flip[], current: Check['status'], from: numbe
       t = until
     }
   }
-  // Before the first change the state was its opposite; with no changes, today's status held throughout.
-  let down = changes.length ? changes[0].up : current === 'down'
+  // Before the first change: not down. The first change is normally the first ping (new -> up), not a recovery.
+  // With no changes at all, today's status held throughout.
+  let down = changes.length ? false : current === 'down'
   let since = from
   for (const c of changes) {
     if (c.t < from) {
@@ -62,7 +63,7 @@ async function one(beat: (typeof status.heartbeats)[number], now: number): Promi
   const check = checks.find((c) => c.slug === beat.slug)
   if (!check || check.status === 'new') return null // not pinged yet: the row appears with the first ping
   const from = Date.parse(`${status.sinceBySlug[beat.slug] ?? status.since}T00:00:00Z`)
-  const flips = await get<Flip[]>(`checks/${check.unique_key}/flips/?start=${Math.floor(from / 1000)}`, key)
+  const { flips } = await get<{ flips: Flip[] }>(`checks/${check.unique_key}/flips/?start=${Math.floor(from / 1000)}`, key)
   return {
     name: beat.name,
     slug: beat.slug,
@@ -73,9 +74,16 @@ async function one(beat: (typeof status.heartbeats)[number], now: number): Promi
   }
 }
 
-// A row that can't be read is left out rather than shown as up or down.
+// A row that can't be read is left out rather than shown as up or down, and logged (it was a silent gap once).
 export async function heartbeats(): Promise<Site[]> {
   const now = Date.now()
-  const rows = await Promise.all(status.heartbeats.map((b) => one(b, now).catch(() => null)))
+  const rows = await Promise.all(
+    status.heartbeats.map((b) =>
+      one(b, now).catch((e) => {
+        console.error(`status: no ${b.name} row:`, e)
+        return null
+      }),
+    ),
+  )
   return rows.filter((r): r is Site => r !== null)
 }
