@@ -134,7 +134,7 @@ export default async function StatusPage() {
         )}
         <p className="font-mono text-[13px] text-[var(--faint)]">
           Every app is checked every 5 minutes from GitHub Actions. API rows hit a deep /health that also checks
-          the database and Redis.
+          the database and Redis; Nebula's workers row checks that prices, orders and database writes are fresh.
         </p>
       </section>
 
