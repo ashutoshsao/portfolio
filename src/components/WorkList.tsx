@@ -72,7 +72,7 @@ function Featured({ item }: { item: WorkItem }) {
             {item.title}
           </h3>
           <Links item={item} />
-          <span className="ml-auto font-mono text-[13px] text-[var(--faint)]">{item.year}</span>
+          <span className="ml-auto hidden font-mono text-[13px] text-[var(--faint)] sm:inline">{item.year}</span>
         </div>
         <p className="max-w-[64ch] text-[16px] leading-[1.6] text-[var(--muted)] text-pretty sm:text-[17px]">
           {item.summary ?? item.description}
@@ -100,7 +100,7 @@ function Compact({ item }: { item: WorkItem }) {
           {item.title}
         </h3>
         <Links item={item} />
-        <span className="ml-auto font-mono text-[13px] text-[var(--faint)]">{item.year}</span>
+        <span className="ml-auto hidden font-mono text-[13px] text-[var(--faint)] sm:inline">{item.year}</span>
       </div>
       <ProofLine proof={item.proof} size="sm" />
       <p className="max-w-[64ch] text-[15.5px] leading-[1.7] text-[var(--muted)] text-pretty">
