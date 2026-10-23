@@ -85,7 +85,7 @@ export const projects: WorkItem[] = [
     proof: { value: '67 of 68', label: 'profile claims verified against their original sources' },
     stack: ['TypeScript', 'React', 'Express', 'PostgreSQL', 'Prisma', 'AI SDK', 'Zod'],
     code: 'https://github.com/ashutoshsao/agent-dating-assignment',
-    live: 'https://agent-dating-assignment.vercel.app',
+    live: 'https://proxy.ashutoshsao.com',
     image: {
       light: '/work/proxy-dates-light.webp',
       dark: '/work/proxy-dates-dark.webp',
