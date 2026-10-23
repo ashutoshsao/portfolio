@@ -7,7 +7,7 @@
   --bg: #fcfcfa;
   --ink: #1a1a1f;
   --muted: #5f5f68;
-  --faint: #8e8e96;
+  --faint: #707079;
   --line: #e6e6e1;
   --line-strong: #d3d3cc;
   --accent: #2240c8;
@@ -34,7 +34,7 @@
   --bg: #111113;
   --ink: #e8e8e4;
   --muted: #a3a3ab;
-  --faint: #74747c;
+  --faint: #96969f;
   --line: #262629;
   --line-strong: #36363b;
   --accent: #93a5f5;
@@ -440,4 +440,81 @@ a {
   fill: var(--surface);
   stroke: var(--line);
   stroke-width: 1px;
+}
+
+/* Fast initial feedback with a soft finish, following Emil Kowalski’s UI timing. */
+.technical-details {
+  --details-ease: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.technical-details-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 150ms var(--ease-out);
+}
+
+.technical-details-chevron {
+  flex: none;
+  transition: transform 250ms var(--details-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .technical-details-trigger:hover {
+    color: var(--ink);
+  }
+}
+
+.technical-details-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 250ms var(--details-ease), opacity 180ms ease;
+}
+
+.technical-details-clip {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.technical-details-content {
+  transform: translateY(-4px);
+  visibility: hidden;
+  transition: transform 250ms var(--details-ease), visibility 0s 250ms;
+}
+
+.technical-details[data-open="true"] .technical-details-chevron {
+  transform: rotate(90deg);
+}
+
+.technical-details[data-open="true"] .technical-details-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.technical-details[data-open="true"] .technical-details-content {
+  transform: translateY(0);
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .technical-details-chevron,
+  .technical-details-panel,
+  .technical-details-content {
+    transition: none;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

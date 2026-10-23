@@ -15,57 +15,61 @@ export default function Home() {
     <main className="mx-auto flex min-h-screen w-full max-w-[792px] flex-col gap-20 px-4 py-14 sm:px-6 sm:py-24">
       <Reveal />
 
-      <header className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 sm:gap-x-6" data-reveal>
-        <Link href="/" className="text-[var(--ink)]">
-          <Signature width={92} />
-        </Link>
-        <nav className="flex items-center gap-x-3 font-mono text-[14px] sm:gap-x-4">
-          <a href={site.github} target="_blank" rel="noopener noreferrer" className="link py-1">
-            github
-          </a>
-          <a href={site.twitter} target="_blank" rel="noopener noreferrer" className="link py-1">
-            x
-          </a>
-          <a href={site.linkedin} target="_blank" rel="noopener noreferrer" className="link py-1">
-            linkedin
-          </a>
-          <a href={site.resume} target="_blank" rel="noopener noreferrer" className="link py-1">
-            resume
-          </a>
-          <ThemeToggle />
-        </nav>
-      </header>
+      <div className="grid gap-12 sm:gap-16">
+        <header className="grid grid-cols-[auto_1fr_auto] items-center gap-x-5 gap-y-3" data-reveal>
+          <Link href="/" className="text-[var(--ink)] transition-colors hover:text-[var(--faint)]" aria-label="Ashutosh Sao home">
+            <Signature width={92} />
+          </Link>
+          <nav aria-label="Main navigation" className="order-last col-span-3 flex flex-wrap items-center gap-x-5 text-[14px] sm:order-none sm:col-span-1 sm:justify-end sm:gap-x-6">
+            <a href="#work" className="inline-flex min-h-11 items-center font-medium text-[var(--ink)] hover:text-[var(--accent)]">
+              Projects
+            </a>
+            <a href="#experience" className="inline-flex min-h-11 items-center font-medium text-[var(--ink)] hover:text-[var(--accent)]">
+              Experience
+            </a>
+            <a href="#contact" className="inline-flex min-h-11 items-center font-medium text-[var(--ink)] hover:text-[var(--accent)]">
+              Contact
+            </a>
+            <a href={site.resume} target="_blank" rel="noopener noreferrer" className="link inline-flex min-h-11 items-center">
+              Resume ↗
+            </a>
+          </nav>
+          <div className="col-start-3 justify-self-end">
+            <ThemeToggle />
+          </div>
+        </header>
 
-      <section className="grid gap-6">
-        <h1
-          className="serif text-[2.3rem] font-normal leading-[1.2] tracking-[-0.015em] text-balance text-[var(--ink)] sm:text-[2.9rem]"
-          data-reveal
-        >
-          I build real-time systems and AI agents -{' '}
-          <em className="pr-[0.04em] text-[var(--accent)]">software that earns trust</em>.
-        </h1>
-        <p
-          className="max-w-[60ch] text-[17px] leading-[1.7] text-[var(--muted)] text-pretty"
-          data-reveal
-          style={{ '--reveal-delay': '80ms' } as React.CSSProperties}
-        >
-          I&apos;m Ashutosh, a software engineer from {site.location}. I care how a system is
-          designed, how it scales, and how it behaves when things go wrong - right now, a
-          real-time trading exchange and AI agents that get real work done.
-        </p>
-        <p
-          className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[13px] text-[var(--faint)]"
-          data-reveal
-          style={{ '--reveal-delay': '160ms' } as React.CSSProperties}
-        >
-          <span className="flex items-center gap-2">
-            <span aria-hidden className="live-dot" />
-            {site.availability}
-          </span>
-          <span aria-hidden className="hidden sm:inline">·</span>
-          <CopyEmail />
-        </p>
-      </section>
+        <section className="grid gap-6">
+          <h1
+            className="serif text-[2.3rem] font-normal leading-[1.2] tracking-[-0.015em] text-balance text-[var(--ink)] sm:text-[2.9rem]"
+            data-reveal
+          >
+            I build real-time systems and AI agents -{' '}
+            <em className="pr-[0.04em] text-[var(--accent)]">software that earns trust</em>.
+          </h1>
+          <p
+            className="max-w-[60ch] text-[17px] leading-[1.7] text-[var(--muted)] text-pretty"
+            data-reveal
+            style={{ '--reveal-delay': '80ms' } as React.CSSProperties}
+          >
+            I&apos;m Ashutosh, a software engineer from {site.location}. I care how a system is
+            designed, how it scales, and how it behaves when things go wrong - right now, a
+            real-time trading exchange and AI agents that get real work done.
+          </p>
+          <p
+            className="flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[13px] text-[var(--faint)]"
+            data-reveal
+            style={{ '--reveal-delay': '160ms' } as React.CSSProperties}
+          >
+            <span className="flex items-center gap-2">
+              <span aria-hidden className="live-dot" />
+              {site.availability}
+            </span>
+            <span aria-hidden className="hidden sm:inline">·</span>
+            <CopyEmail />
+          </p>
+        </section>
+      </div>
 
       <Section index="01" label="Work">
         <WorkList featured={projects} more={moreProjects} />
@@ -129,11 +133,11 @@ export default function Home() {
         </dl>
       </Section>
 
-      <Section index="04" label="Activity">
+      <Section id="activity" index="04" label="GitHub activity">
         <Activity />
       </Section>
 
-      <Footer />
+      <Footer className="-mt-12" />
     </main>
   )
 }

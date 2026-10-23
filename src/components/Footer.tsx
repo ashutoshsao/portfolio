@@ -8,7 +8,7 @@ const map: { label: string; href: string; external?: boolean }[] = [
   { label: 'Work', href: '/#work' },
   { label: 'Experience', href: '/#experience' },
   { label: 'Recognition', href: '/#recognition' },
-  { label: 'Activity', href: '/#activity' },
+  { label: 'GitHub activity', href: '/#activity' },
   { label: 'Status', href: '/status' },
   { label: 'Resume', href: site.resume, external: true },
 ]
@@ -63,20 +63,22 @@ const heart = 'M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 
 const hover = 'transition-colors hover:text-[var(--faint)]'
 
 // A hairline dropping from the content, the signature, then a map of the whole site.
-export default function Footer() {
+export default function Footer({ className = '' }: { className?: string }) {
   return (
-    <footer className="grid justify-items-center gap-8 pt-4 text-center">
+    <footer id="contact" aria-label="Contact and links" className={`grid scroll-mt-10 justify-items-center gap-6 pt-4 text-center ${className}`}>
       <span aria-hidden className="h-16 w-px bg-[var(--muted)]" />
-      <Link href="/" className={`text-[var(--ink)] ${hover}`}>
-        <Signature width={104} />
-      </Link>
-      <p className="font-mono text-[12px] font-semibold tracking-[0.05em] text-[var(--faint)] uppercase">
-        Made with <Icon paths={[heart]} className="-mt-1 align-middle" />
-        <span className="sr-only">love</span> by {site.name}
-      </p>
-      <p className="max-w-sm text-[14px] leading-[1.6] text-pretty text-[var(--faint)]">
-        {site.name} is a software engineer from {site.location}, building real-time systems and AI agents.
-      </p>
+      <div className="grid justify-items-center gap-3 sm:gap-4">
+        <Link href="/" className={`text-[var(--ink)] ${hover}`}>
+          <Signature width={104} />
+        </Link>
+        <p className="font-mono text-[12px] font-semibold tracking-[0.05em] text-[var(--faint)] uppercase">
+          Made with <Icon paths={[heart]} className="-mt-1 align-middle" />
+          <span className="sr-only">love</span> by {site.name}
+        </p>
+        <p className="max-w-sm text-[14px] leading-[1.6] text-pretty text-[var(--faint)]">
+          {site.name} is a software engineer from {site.location}, building real-time systems and AI agents.
+        </p>
+      </div>
       <nav className="flex max-w-xl flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[14px] text-[var(--ink)]">
         {map.map((l) =>
           l.external ? (

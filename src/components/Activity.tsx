@@ -45,6 +45,10 @@ export default function Activity() {
 
   return (
     <div className="grid gap-4">
+      <p className="max-w-[64ch] text-[15px] leading-[1.7] text-[var(--muted)]">
+        My contributions on GitHub over the past year. Each square is a day;
+        stronger colors mean more contributions, such as code changes and pull requests.
+      </p>
       {status !== 'ready' ? (
         <div className="flex h-[120px] items-center font-mono text-[11.5px] text-[var(--faint)]">
           {status === 'loading' ? 'fetching contributions…' : 'github is unreachable right now.'}
