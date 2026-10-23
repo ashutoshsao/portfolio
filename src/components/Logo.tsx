@@ -4,6 +4,7 @@ const logos: Record<string, string> = {
   Orin: '/logos/orin.svg',
   Nebula: '/logos/nebula.svg',
   Ardin: '/logos/ardin.svg',
+  Proxy: '/logos/proxy.svg',
   'Super30 - 100xSchool': '/logos/100xschool.in.png',
   'Palisadoes Foundation': '/logos/palisadoes.org.png',
   'Superteam SuperDevs': '/logos/superteam.fun.png',
